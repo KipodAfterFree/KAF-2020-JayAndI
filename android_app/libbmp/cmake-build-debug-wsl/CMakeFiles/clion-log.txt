@@ -1,0 +1,6 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang -DDEBUG -G "CodeBlocks - Unix Makefiles" /mnt/c/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit
+Parse error in command line argument: -DDEBUG
+Should be: VAR:type=value
+CMake Error: No cmake script provided.
+CMake Error: Problem processing arguments. Aborting.
+

@@ -1,0 +1,28 @@
+The system is: Linux - 4.4.0-19041-Microsoft - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/mnt/c/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/cmake-build-release/CMakeFiles/3.5.1/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /mnt/c/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/cmake-build-release/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b1924/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b1924.dir/build.make CMakeFiles/cmTC_b1924.dir/build
+make[1]: Entering directory '/mnt/c/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/cmake-build-release/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b1924.dir/testCCompiler.c.o
+/usr/bin/gcc     -o CMakeFiles/cmTC_b1924.dir/testCCompiler.c.o   -c /mnt/c/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/cmake-build-release/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_b1924
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1924.dir/link.txt --verbose=1
+/usr/bin/gcc       CMakeFiles/cmTC_b1924.dir/testCCompiler.c.o  -o cmTC_b1924 
+make[1]: Leaving directory '/mnt/c/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/cmake-build-release/CMakeFiles/CMakeTmp'
+
+

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/server.dir/src/main.cpp.o CMakeFiles/server.dir/src/page.cpp.o CMakeFiles/server.dir/src/page_manager.cpp.o CMakeFiles/server.dir/src/user.cpp.o -o ../bin/server-1.0.0  -lpthread -lstdc++fs 
