@@ -1,1 +1,0 @@
-/usr/bin/clang     CMakeFiles/libbmp.dir/src/bmp_parse.c.o CMakeFiles/libbmp.dir/src/compression.c.o  -o ../bin/libbmp-1.0.0 
