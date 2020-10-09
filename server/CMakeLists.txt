@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5.1)
+cmake_minimum_required(VERSION 3.9)
 project(server VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -15,9 +15,7 @@ file(GLOB SOURCES src/*)
 include_directories(include)
 include(GNUInstallDirs)
 
-# link_directories("/home/clion_user/casablanca/build.debug/Release/Binaries/")
-
-add_executable(${PROJECT_NAME} ${SOURCES} src/page.cpp include/page.h src/page_manager.cpp include/page_manager.h include/common.h include/user.h include/user_manager.h src/user.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 # target_link_libraries(${PROJECT_NAME} -static -lboost_system libcpprest.a libcrypto.a libz.a -lssl -ldl -lpthread)
 

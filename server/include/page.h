@@ -11,12 +11,12 @@
 class Page {
 private:
     std::unique_ptr<char*> content;
-public:
-    Page(fs::path& fname);
-    ~Page() = default;
+        public:
+        Page(fs::path& fname);
+        ~Page() = default;
 
-public:
-    char* get_content() { return *this->content.get(); };
+        public:
+        char* get_content() { return *this->content; };
 };
 
 #endif //SERVER_PAGE_H

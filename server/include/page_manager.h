@@ -12,17 +12,17 @@
 class PageManager {
 private:
     std::map<std::string, std::unique_ptr<Page*>> pages;
-public:
-    PageManager();
-    ~PageManager() = default;
+        public:
+        PageManager();
+        ~PageManager() = default;
 
 /*
  * Page functions
  */
-public:
-    void add_page(std::string name, std::string filename);
-public:
-    Page* get_page(std::string name);
+        public:
+        void add_page(const std::string& name, const std::string& filename);
+        public:
+        Page* get_page(const std::string& name);
 };
 
 

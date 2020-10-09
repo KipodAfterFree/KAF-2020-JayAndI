@@ -6,19 +6,26 @@
 #define SERVER_USER_H
 
 #include <string>
+#include <ostream>
 
 class User {
 private:
     std::string name;
-    bool admin;
+        std::string password;
+        bool admin;
 
-public:
-    User(std::string name);
-    ~User();
+        public:
+        User(const std::string& _name, const std::string& _password, bool _admin=false): name{ _name }, admin{ _admin }, password(_password) {};
+        ~User() = default;
 
-public:
-    bool is_admin() { return this->admin; }
+        public:
+        inline bool is_admin() const { return this->admin; }
+        inline std::string get_name() const { return this->name; }
+        inline std::string get_password() const { return this->password; }
 
+        public:
+        friend std::ostream& operator<<(std::ostream& out, User user);
 };
+
 
 #endif //SERVER_USER_H
