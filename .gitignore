@@ -1,4 +1,4 @@
-/server/boost/
+/server/include/boost/
 /server/cmake-build-release/
 /server/cmake-build-debug/
 /server/bin/

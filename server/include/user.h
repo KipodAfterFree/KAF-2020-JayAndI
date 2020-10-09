@@ -7,21 +7,36 @@
 
 #include <string>
 #include <ostream>
+#include <cstring>
 
-class User {
-private:
-    std::string name;
-        std::string password;
-        bool admin;
+
+/* TODO: not quite sure what "structure packing" is, but I think
+ *  I should add it someday.
+ */
+class User{
+        private:
+        char a;
+        unsigned short age;
+
+        // Returns whether the user is an admin
+        unsigned char admin;
+        char name[24];
+        char password[24];
+
+        private:
+        void memset_strip_newline (const std::string& name);
 
         public:
-        User(const std::string& _name, const std::string& _password, bool _admin=false): name{ _name }, admin{ _admin }, password(_password) {};
+        User(const std::string& _name, const std::string& _password, unsigned short _age, bool _admin);
         ~User() = default;
 
         public:
-        inline bool is_admin() const { return this->admin; }
-        inline std::string get_name() const { return this->name; }
-        inline std::string get_password() const { return this->password; }
+        inline bool is_admin() const {
+            return this->admin == 1;
+        }
+
+        inline std::string get_name() const { return std::string(this->name); }
+        inline std::string get_password() const { return std::string(this->password); }
 
         public:
         friend std::ostream& operator<<(std::ostream& out, User user);

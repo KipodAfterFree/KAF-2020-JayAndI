@@ -20,3 +20,48 @@ private:
 };
 
 #endif //SERVER_PAGE_H
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+typedef struct {
+    bool is_enabled; // 1
+    short age; // 2
+    bool is_admin;
+    char* name;
+} User;
+*/
+// User* user;
+// name = *((char*)user + sizeof(a) + sizeof(b) + sizeof(is_admin))
+
+/*
+ * 1. Add rename functionality
+ * 2. Name: \n\nadam\x00
+ *
+ *
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

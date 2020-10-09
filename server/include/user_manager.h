@@ -24,13 +24,13 @@ class UserManager{
         ~UserManager() = default;
 
         public:
-        bool add_user(const std::string& name, const std::string& password, bool admin);
+        bool add_user(const std::string& name, const std::string& password, unsigned short age, bool admin);
         void print_users();
 
         public:
         bool remove_user(const std::string& name, const std::string& password);
         bool login_user(const std::string& name, const std::string& password);
-        bool register_user(const std::string& name, const std::string& password);
+        bool register_user(const std::string& name, const std::string& password, const std::string& age);
 
 
 };

@@ -8,11 +8,11 @@
 #include "../include/common.h"
 #include <boost/algorithm/string.hpp>
 
-bool UserManager::add_user(const std::string &name, const std::string &password, bool admin) {
+bool UserManager::add_user(const std::string &name, const std::string &password, unsigned short age, bool admin) {
     if (users.capacity() <= users.size())
         return false;
 
-    users.insert(users.begin(), std::make_unique<User *>(new User{name, password, admin}));
+    users.insert(users.begin(), std::make_unique<User *>(new User{name, password, age, admin}));
     return true;
 }
 
@@ -44,14 +44,14 @@ void UserManager::initialize() {
         std::vector <std::string> split_commas;
         boost::split(split_commas, line, boost::is_any_of(","));
 
-        if (split_commas.size() < 3) {
+        if (split_commas.size() != 4) {
             std::ostringstream error_stream;
             error_stream << "Not enough columns in users.txt: " << line << std::endl;
             throw std::out_of_range{error_stream.str()};
         }
-
-        this->add_user(split_commas[0], split_commas[1],
-                       boost::algorithm::to_lower_copy(split_commas[2]) == "true");
+        auto age = static_cast<unsigned short>(std::stoi(split_commas[2]));
+        this->add_user(split_commas[0], split_commas[1], age,
+                       boost::algorithm::to_lower_copy(split_commas[3]) == "true");
     }
 }
 
@@ -87,7 +87,7 @@ bool UserManager::login_user(const std::string &name, const std::string &passwor
     return false;
 }
 
-bool UserManager::register_user(const std::string &name, const std::string &password) {
+bool UserManager::register_user(const std::string &name, const std::string &password, const std::string &age) {
     for (auto &cur : this->users) {
         auto user = static_cast<User *>(*cur);
         if (user->get_name() == name) {
@@ -95,7 +95,8 @@ bool UserManager::register_user(const std::string &name, const std::string &pass
             return false;
         }
     }
-    this->add_user(name, password, false);
+    unsigned short _age = static_cast<unsigned short>(std::stoi(age));
+    this->add_user(name, password, _age, false);
     return true;
 }
 
