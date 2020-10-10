@@ -5,17 +5,33 @@ RUN mkdir /build
 
 WORKDIR /build
 
-# Copy app sources
-COPY . .
+# Copy gradle wrapper
+COPY kaf2020android/gradlew gradlew
+COPY kaf2020android/gradle gradle
+COPY kaf2020android/build.gradle build.gradle
+COPY kaf2020android/gradle.properties gradle.properties
+COPY kaf2020android/settings.gradle settings.gradle
+
+RUN chmod +x ./gradlew
+RUN ./gradlew
+
+# Copy sources
+COPY kaf2020android/app app
 
 # Compile app
-RUN cd kaf2020android; ./gradlew assembleDebug
+RUN ./gradlew assembleDebug
 
 CMD ["/bin/bash"]
 
-FROM thyrlian/android-sdk:5.0 AS client
+FROM ubuntu:20.04 AS administrator
 
-COPY --from=builder /build/kaf2020android/app/build/outputs/apk/debug/app-debug.apk /client/app.apk
+RUN apt -y update
+RUN apt -y install android-tools-adb
 
-RUN apt -y update 
-RUN apt -y install adb
+COPY docker/entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+COPY --from=builder /build/app/build/outputs/apk/debug/app-debug.apk /client/app.apk
+
+ENTRYPOINT ["/entrypoint.sh"]
