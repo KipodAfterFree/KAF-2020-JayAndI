@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="libbmp" targetName="libbmp" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" TOOLCHAIN_NAME="WSL" GENERATION_OPTIONS="-DDEBUG=1 -URELEASE" />
+      <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" TOOLCHAIN_NAME="WSL" GENERATION_OPTIONS="-DRELEASE=1 -UDEBUG" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="30bd4413-5354-4557-ac79-4ea3c2650d0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/oops_my_exploit.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules/android_app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KAF2020/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kaf2020android/app/src/main/res/layout/authenticate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/bin/server-1.0.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/3.5.1/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/3.5.1/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/CMakeFiles/server.dir/src/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-debug/server.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/3.5.1/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/3.5.1/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/CMakeFiles/server.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/cmake-build-release/server.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../include/bmp_parse.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../include/compression.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/bmp_parse.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/compression.c" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1iN1HSjs8gu2KKzZ7xFEVGTl1KS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../server" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\GUY\Desktop\code\hacking\ctfs\CTFs\kaf2020\oops_my_exploit" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.libbmp">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="default" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="libbmp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="libbmp" RUN_TARGET_NAME="libbmp" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.default" />
+      <item itemvalue="CMake Application.libbmp" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="536" y="185" key="#SSH_Configurations" timestamp="1601734699725">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="536" y="185" key="#SSH_Configurations/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601734699725" />
+    <state x="637" y="174" width="1092" height="784" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601746053084">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="637" y="174" width="1092" height="784" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601746053084" />
+    <state x="850" y="293" width="519" height="494" key="#xdebugger.XInspectDialog" timestamp="1601741945923">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="850" y="293" width="519" height="494" key="#xdebugger.XInspectDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601741945923" />
+    <state x="740" y="307" key="FileChooserDialogImpl" timestamp="1602109058673">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="307" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602109058673" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1601754620636">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620636" />
+    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1601754620636">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620636" />
+    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1601754620635">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620635" />
+    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1601754620636">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620636" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1601754620637">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620637" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1601754620637">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620637" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1601754620636">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620636" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1601754620637">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601754620637" />
+    <state x="716" y="92" width="998" height="708" key="SettingsEditor" timestamp="1601746076385">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="716" y="92" width="998" height="708" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601746076385" />
+    <state x="777" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601733685317">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="777" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601733685317" />
+    <state x="667" y="139" width="585" height="801" key="find.popup" timestamp="1601747022733">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="667" y="139" width="585" height="801" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601747022733" />
+    <state x="859" y="270" key="ftp.server.browser" timestamp="1601737724078">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="859" y="270" key="ftp.server.browser/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601737724078" />
+    <state x="685" y="324" key="refactoring.ChangeSignatureDialog" timestamp="1601747093027">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="685" y="324" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1601747093027" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/bmp_parse.c</url>
+          <line>69</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="header.file_size" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

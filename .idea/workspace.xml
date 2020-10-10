@@ -27,7 +27,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19be1fdd-8432-4a73-a92a-43a5994bc487" name="Default Changelist" comment="" />
+    <list default="true" id="19be1fdd-8432-4a73-a92a-43a5994bc487" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/res/layout/home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_app/kaf2020android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android_app/kaf2020android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,23 +52,38 @@
   <component name="PropertiesComponent">
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/KAF-2020-JayAndI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19be1fdd-8432-4a73-a92a-43a5994bc487" name="Default Changelist" comment="" />
+      <created>1602341010177</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602341010177</updated>
+    </task>
+    <servers />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1602284506880">
