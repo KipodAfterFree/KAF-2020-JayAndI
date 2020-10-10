@@ -10,7 +10,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class ServerIntegrate {
-    final String server_url = "http://10.0.0.1:12345";
+    final String server_url = "http://10.0.0.6:12345";
 
     /* access modifiers changed from: package-private */
     public Response sendRequest(String base_url, String endpoint, Map<String, String> params) throws IOException {

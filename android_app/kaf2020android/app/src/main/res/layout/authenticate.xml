@@ -47,13 +47,13 @@
         app:layout_constraintVertical_bias="0.227" />
 
     <EditText
-        android:id="@+id/input_email"
+        android:id="@+id/input_name"
         android:layout_width="264dp"
         android:layout_height="63dp"
-        android:autofillHints="@string/email_placeholder"
+        android:autofillHints="@string/name_placeholder"
         android:ems="10"
-        android:hint="@string/email_placeholder"
-        android:inputType="textEmailAddress"
+        android:hint="@string/name_placeholder"
+        android:inputType="textPersonName"
         android:selectAllOnFocus="true"
         android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"

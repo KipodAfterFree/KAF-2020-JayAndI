@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.authenticate);
-        final EditText email_text = (EditText) findViewById(R.id.input_email);
+        final EditText username = (EditText) findViewById(R.id.input_name);
         final EditText password_text = (EditText) findViewById(R.id.input_password);
         final ServerIntegrate server = new ServerIntegrate();
         final Button login_button = (Button) findViewById(R.id.login_button);
@@ -25,15 +25,18 @@ public class MainActivity extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 final String password = password_text.getText().toString();
-                final String email = email_text.getText().toString();
-                if (password.length() == 0 || email.length() == 0) {
-                    Toast.makeText(MainActivity.this, "Password and email can't be empty!", 1).show();
+                final String name = username.getText().toString();
+                if (password.length() == 0 || name.length() == 0) {
+                    Toast.makeText(MainActivity.this, "Password and email can't be empty!", Toast.LENGTH_LONG).show();
                 } else {
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                if (server.login(email, password)) {
+                                if (server.login(name, password)) {
                                     MainActivity.this.showToast("Login has succeeded!");
+                                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                                    i.putExtra("username", name);
+                                    startActivity(i);
                                 } else {
                                     MainActivity.this.showToast("Login has failed!");
                                 }
@@ -58,13 +61,12 @@ public class MainActivity extends AppCompatActivity {
                             return;
                         }
                         final String password = password_text.getText().toString();
-                        final String email = email_text.getText().toString();
+                        final String email = username.getText().toString();
                         new Thread(new Runnable() {
                             public void run() {
                                 try {
                                     if (server.register(email, password, age)) {
                                         MainActivity.this.showToast("Login was successful!");
-                                        setContentView(R.layout.home);
                                     } else {
                                         MainActivity.this.showToast("Login has failed!");
                                     }

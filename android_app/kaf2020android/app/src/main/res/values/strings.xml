@@ -2,7 +2,8 @@
     <string name="app_name">kaf-2020-android</string>
 
     <string name="password_placeholder">Password</string>
-    <string name="email_placeholder">Email</string>
+    <string name="name_placeholder">Username</string>
     <string name="register_placeholder">Register</string>
     <string name="login_placeholder">Login</string>
+    <string name="name">Name</string>
 </resources>

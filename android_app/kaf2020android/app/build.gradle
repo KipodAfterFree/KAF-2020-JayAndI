@@ -7,7 +7,6 @@ android {
     defaultConfig {
         applicationId "com.example.kaf_2020_android"
         minSdkVersion 24
-        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
 

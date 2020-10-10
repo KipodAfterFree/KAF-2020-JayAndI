@@ -27,12 +27,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19be1fdd-8432-4a73-a92a-43a5994bc487" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/res/layout/home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android_app/kaf2020android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android_app/kaf2020android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android_app/kaf2020android/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="19be1fdd-8432-4a73-a92a-43a5994bc487" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android_app/kaf2020android" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,13 +81,17 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1602284506880">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1602345091210">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602284506880" />
+    <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602345091210" />
     <state x="461" y="185" key="SettingsEditor" timestamp="1602284345083">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="185" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602284345083" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1602345075159">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602345075159" />
   </component>
 </project>
