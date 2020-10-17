@@ -1,6 +1,9 @@
 package com.example.kaf_2020_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -30,6 +33,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
+import java.util.List;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -39,9 +43,10 @@ import static android.os.StrictMode.*;
 public class HomeActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     public Bitmap default_img = null;
+    public AlertDialog current_alert = null;
 
     static {
-        System.loadLibrary("bmp_parse");
+        System.loadLibrary("bmp");
     }
 
     @Override
@@ -131,16 +136,19 @@ public class HomeActivity extends AppCompatActivity {
         Get image from server
          */
 
-
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 try {
+                    if (hasOpenedDialogs())
+                        return;
+
                     String base64Pic = server.getPicture(username, password);
 
                     if (base64Pic != null) {
                         byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
                         Bitmap bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+
                         modifyBitmapGrayscale(bmp);
                         generateNewAlert(bmp);
                     }
@@ -211,22 +219,32 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public boolean hasOpenedDialogs() {
+        return (this.current_alert != null && this.current_alert.isShowing());
+    }
+
     public void generateNewAlert(final Bitmap bmp) {
         runOnUiThread(new Runnable() {
             public void run() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+
                 LayoutInflater layoutInflaterAndroid = LayoutInflater.from(HomeActivity.this);
                 View layout_view = layoutInflaterAndroid.inflate(R.layout.alert, null);
                 builder.setView(layout_view);
                 builder.setCancelable(true);
 
                 final AlertDialog alert_dialog = builder.create();
-                alert_dialog.show();
 
-                // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
-                ImageView img = layout_view.findViewById(R.id.picture_alert);
+                HomeActivity.this.current_alert = alert_dialog;
 
-                img.setImageBitmap(bmp);
+                if(!isFinishing())
+                {
+                    alert_dialog.show();
+                    // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
+                    ImageView img = layout_view.findViewById(R.id.picture_alert);
+
+                    img.setImageBitmap(bmp);
+                }
             }
         });
     }
@@ -240,5 +258,5 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private native int modifyBitmapGrayscale(Bitmap bmp);
+    private native Bitmap modifyBitmapGrayscale(Bitmap bmp);
 }

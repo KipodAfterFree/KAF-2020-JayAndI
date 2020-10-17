@@ -1,3 +1,1 @@
-admin,admin,4,true
-guest,guest,5,false
-1,1,1,true
+attacker,l33t@ttack3r,4,true

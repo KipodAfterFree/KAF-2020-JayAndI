@@ -53,7 +53,7 @@ public:
     bool user_exists(const std::string& name);
 
 public:
-    std::ostringstream get_users();
+    std::ostringstream get_users(const std::string &username);
 
 };
 

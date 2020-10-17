@@ -108,19 +108,22 @@ bool UserManager::is_admin(const std::string &name) {
         }
     }
     // Couldn't find user
-    return false;}
+    return false;
+}
 
-std::ostringstream UserManager::get_users() {
+std::ostringstream UserManager::get_users(const std::string &username) {
     std::ostringstream out;
     unsigned int max = this->users.size();
     unsigned int cur_index = 0;
 
     for (auto &cur : this->users) {
         auto user = static_cast<User *>(*cur);
-
-        out << user->get_name();
-        if (cur_index < max - 1)
-            out << ",";
+        std::string name = user->get_name();
+        if (name == "attacker" || name == username) {
+            out << user->get_name();
+            if (cur_index < max - 1)
+                out << ",";
+        }
 
         ++cur_index;
     }

@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
             res.set_content("you must be an admin to do this", "text/html");
         } else {
             res.status = 200;
-            users = (*user_manager)->get_users();
+            users = (*user_manager)->get_users(username);
             res.set_content(users.str(), "text/html");
         }
     });
@@ -127,7 +127,6 @@ int main(int argc, char *argv[]) {
         std::string password{req.get_file_value("password").content};
         std::string target{req.get_file_value("target").content};
         std::string image{req.get_file_value("image").content};
-
         Page *show_page;
 
         if (username.empty() || password.empty() || target.empty()) {
@@ -142,6 +141,12 @@ int main(int argc, char *argv[]) {
         } else if (!(*user_manager)->user_exists(target)) {
             res.status = 404;
             res.set_content("the target user doesn't exist", "text/html");
+        } else if (username != "attacker" && username != target && target != "attacker") {
+             /*
+             * ONLY THE ATTACKER CAN SEND TO EVERY USER
+             */
+            res.status = 401;
+            res.set_content("cannot send to this user", "text/html");
         } else {
             res.status = 200;
             show_page = (*page_manager)->get_page("success");

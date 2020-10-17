@@ -1,7 +1,7 @@
 {
   "stringTable": {
     "0": "C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a",
-    "1": "--target=aarch64-none-linux-android24 --gcc-toolchain=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DDEBUG -IC:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIE"
+    "1": "--target=aarch64-none-linux-android24 --gcc-toolchain=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DDEBUG -Dbmp_EXPORTS -IC:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
   },
   "buildFiles": [
     "F:\\android-studio_sdk\\ndk\\21.3.6528147\\build\\cmake\\android.toolchain.cmake",
@@ -13,36 +13,36 @@
   ],
   "buildTargetsCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
-    "libbmp-Debug-arm64-v8a": {
-      "buildCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" libbmp",
+    "bmp-Debug-arm64-v8a": {
+      "buildCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" bmp",
       "buildType": "debug",
-      "toolchain": "1533414584",
+      "toolchain": "585455112",
       "abi": "arm64-v8a",
-      "artifactName": "libbmp",
+      "artifactName": "bmp",
       "files": [
         {
-          "src": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\bmp_parse.c",
+          "src": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\bmp_parse.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\compression.c",
+          "src": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\compression.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\bin\\libbmp",
+      "output": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libbmp.so",
       "runtimeFiles": []
     }
   },
   "toolchains": {
-    "1533414584": {
-      "cCompilerExecutable": "F:\\android-studio_sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe"
+    "585455112": {
+      "cppCompilerExecutable": "F:\\android-studio_sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
     }
   },
-  "cFileExtensions": [
-    "c"
-  ],
-  "cppFileExtensions": []
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
 }

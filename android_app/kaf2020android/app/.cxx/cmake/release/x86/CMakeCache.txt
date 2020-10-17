@@ -45,14 +45,30 @@ CMAKE_ASM_FLAGS_RELEASE:STRING=
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
 CMAKE_BUILD_TYPE:STRING=Release
 
+//LLVM archiver
+CMAKE_CXX_COMPILER_AR:FILEPATH=CMAKE_CXX_COMPILER_AR-NOTFOUND
+
+//Generate index for LLVM archive
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=CMAKE_CXX_COMPILER_RANLIB-NOTFOUND
+
 //Flags used by the compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
 
 //Flags used by the compiler during debug builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=
 
+//Flags used by the compiler during release builds for minimum
+// size.
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
 //Flags used by the compiler during release builds.
 CMAKE_CXX_FLAGS_RELEASE:STRING=
+
+//Flags used by the compiler during release builds with debug info.
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Libraries linked by default with all C++ applications.
+CMAKE_CXX_STANDARD_LIBRARIES:STRING=-latomic -lm
 
 //LLVM archiver
 CMAKE_C_COMPILER_AR:FILEPATH=CMAKE_C_COMPILER_AR-NOTFOUND
@@ -185,7 +201,7 @@ CMAKE_OBJCOPY:FILEPATH=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/pr
 CMAKE_OBJDUMP:FILEPATH=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/bin/i686-linux-android-objdump.exe
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=libbmp
+CMAKE_PROJECT_NAME:STATIC=bmp
 
 //Ranlib
 CMAKE_RANLIB:FILEPATH=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/bin/i686-linux-android-ranlib.exe
@@ -236,8 +252,8 @@ CMAKE_SYSTEM_NAME:UNINITIALIZED=Android
 //No help, variable specified on the command line.
 CMAKE_SYSTEM_VERSION:UNINITIALIZED=24
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=F:/android-studio_sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=F:\android-studio_sdk\ndk\21.3.6528147\build\cmake\android.toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -246,7 +262,19 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=F:/android-studio_sdk/ndk/21.3.6528147/build/cmake
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+bmp_BINARY_DIR:STATIC=C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/x86
+
+//Dependencies for the target
+bmp_LIB_DEPENDS:STATIC=general;log;general;android;
+
+//Value Computed by CMake
+bmp_SOURCE_DIR:STATIC=C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp
+
+//Value Computed by CMake
 libbmp_BINARY_DIR:STATIC=C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/x86
+
+//Dependencies for the target
+libbmp_LIB_DEPENDS:STATIC=general;log;general;android;
 
 //Value Computed by CMake
 libbmp_SOURCE_DIR:STATIC=C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp
@@ -272,6 +300,22 @@ CMAKE_COMMAND:INTERNAL=F:/android-studio_sdk/cmake/3.10.2.4988404/bin/cmake.exe
 CMAKE_CPACK_COMMAND:INTERNAL=F:/android-studio_sdk/cmake/3.10.2.4988404/bin/cpack.exe
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=F:/android-studio_sdk/cmake/3.10.2.4988404/bin/ctest.exe
+//ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
+CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
+CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS
+CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
+CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_MINSIZEREL
+CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELEASE
+CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
+CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_STANDARD_LIBRARIES
+CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB

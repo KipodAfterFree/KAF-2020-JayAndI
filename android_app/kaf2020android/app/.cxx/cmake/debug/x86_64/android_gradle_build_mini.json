@@ -9,11 +9,11 @@
   ],
   "buildTargetsCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
-    "libbmp-Debug-x86_64": {
-      "artifactName": "libbmp",
-      "buildCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\x86_64\" libbmp",
+    "bmp-Debug-x86_64": {
+      "artifactName": "bmp",
+      "buildCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\x86_64\" bmp",
       "abi": "x86_64",
-      "output": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\debug\\bin\\libbmp",
+      "output": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libbmp.so",
       "runtimeFiles": []
     }
   }

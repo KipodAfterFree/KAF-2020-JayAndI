@@ -16,14 +16,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87ddde29-f4cf-43e7-8098-a6456c6bd9e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/res/layout/alert.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/arm64-v8a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/libbmp.dir/src/bmp_parse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/libbmp.dir/src/bmp_parse.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build_libbmp_armeabi-v7a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build_libbmp_armeabi-v7a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/bin/libbmp" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/bin/libbmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/libbmp.dir/src/bmp_parse.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/CMakeFiles/libbmp.dir/src/compression.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build_libbmp_x86.command.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build_libbmp_x86.stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build_libbmp_x86.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/libbmp.dir/src/bmp_parse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/CMakeFiles/libbmp.dir/src/bmp_parse.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/android_gradle_build_libbmp_x86_64.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/android_gradle_build_libbmp_x86_64.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/debug/x86_64/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/arm64-v8a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/cmake_server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/json_generation_record.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/.cxx/cmake/release/x86_64/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/HomeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/ServerIntegrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/java/com/example/kaf_2020_android/ServerIntegrate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/res/layout/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/res/layout/home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/libbmp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/libbmp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/libbmp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/libbmp/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/libbmp/src/bmp_parse.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/libbmp/src/compression.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/user_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/user_manager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/users/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/users/users.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_manager.cpp" afterDir="false" />
     </list>
@@ -57,7 +168,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../android_app/libbmp" />
     <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
   </component>
   <component name="RecentsManager">
@@ -92,58 +203,58 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="559" y="170" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602347059515" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1602913095061">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1602937693726">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602913095061" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1602928442645">
+    <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937693726" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602928442645" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694697" />
     <state width="1877" height="363" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102607" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1602928442645">
+    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1602937694696">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602928442645" />
+    <state width="1877" height="363" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694696" />
     <state width="1877" height="363" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102607" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1602928442645">
+    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1602937694696">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602928442645" />
+    <state width="1877" height="363" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694696" />
     <state width="1877" height="363" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102606" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1602928442645">
+    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602928442645" />
+    <state width="1877" height="363" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694697" />
     <state width="1877" height="363" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102607" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1602921168243">
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602921168243" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694697" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102494" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1602921168243">
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602921168243" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694697" />
     <state width="1877" height="363" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102494" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1602921168243">
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602921168243" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694697" />
     <state width="1877" height="363" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102494" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1602921168243">
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602921168243" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937694697" />
     <state width="1877" height="363" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102494" />
     <state x="461" y="185" key="SettingsEditor" timestamp="1602914021075">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="185" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602914021075" />
-    <state x="1147" y="273" width="585" height="534" key="find.popup" timestamp="1602917995627">
+    <state x="1147" y="273" width="585" height="534" key="find.popup" timestamp="1602964288734">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1147" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602917995627" />
+    <state x="1147" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602964288734" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1602866929638">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
