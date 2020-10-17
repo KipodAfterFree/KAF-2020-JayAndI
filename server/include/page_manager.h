@@ -20,7 +20,7 @@ private:
  * Page functions
  */
         public:
-        void add_page(const std::string& name, const std::string& filename);
+        void add_page(const std::string& name, const std::string& filename, const std::string &extra_dir="", const std::string &content="");
         public:
         Page* get_page(const std::string& name);
 };

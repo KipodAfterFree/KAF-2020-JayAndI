@@ -6,4 +6,7 @@
     <string name="register_placeholder">Register</string>
     <string name="login_placeholder">Login</string>
     <string name="name">Name</string>
+
+    <string name="username_text">Username</string>
+    <string name="send_text">Send Image</string>
 </resources>

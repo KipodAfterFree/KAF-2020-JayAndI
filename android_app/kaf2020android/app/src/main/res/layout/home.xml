@@ -7,29 +7,40 @@
     android:foreground="@android:color/transparent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profile_pic"
         android:layout_width="270dp"
         android:layout_height="294dp"
-        android:layout_marginTop="56dp"
-        android:foreground="@drawable/ic_launcher_foreground"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:color/transparent" />
+        app:srcCompat="@drawable/default_img"
+        tools:srcCompat="@drawable/default_img" />
 
     <TextView
         android:id="@+id/username_text"
         android:layout_width="251dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="TextView"
+        android:text="@string/username_text"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic"
+        app:layout_constraintVertical_bias="0.549" />
+
+    <Button
+        android:id="@+id/send_image"
+        android:layout_width="153dp"
+        android:layout_height="42dp"
+        android:text="@string/send_text"
+        app:layout_constraintBottom_toTopOf="@+id/username_text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic"
+        app:layout_constraintVertical_bias="0.139" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
