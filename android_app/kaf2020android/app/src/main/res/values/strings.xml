@@ -9,4 +9,8 @@
 
     <string name="username_text">Username</string>
     <string name="send_text">Send Image</string>
+    <string name="logout_text">Logout</string>
+
+    <string name="alert_text">Grayscale image has been sent:</string>
+    <string name="alert_button_text">OK</string>
 </resources>

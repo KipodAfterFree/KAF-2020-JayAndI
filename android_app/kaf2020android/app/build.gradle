@@ -19,6 +19,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    externalNativeBuild {
+        cmake {
+            path file('../../libbmp/CMakeLists.txt')
+        }
+    }
+    ndkVersion '21.3.6528147'
 }
 
 dependencies {

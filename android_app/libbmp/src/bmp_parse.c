@@ -10,21 +10,25 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <stdbool.h>
+#include <jni.h>
+#include <bmp_parse.h>
 #include "../include/bmp_parse.h"
 
 #define BMP_FILE "../res/test.bmp"
 #define MAX_SIZE 4 * 1024  // 4KB
 
+
 int main() {
-    setvbuf(stdout, NULL, _IONBF, 0);
-    read_bmp();
+    // setvbuf(stdout, NULL, _IONBF, 0);
+    // read_bmp();
     return 0;
 }
+
 
 bool verify_bmp(bmp_header* header) {
     if (header->signature.first != 'B' ||
             header->signature.second != 'M') {
-        printf("[-] Invalid signature found: %x\n", header->signature);
+        printf("[-] Invalid signature found: %x%x\n", header->signature.first, header->signature.second);
         return false;
     }
 #ifdef RELEASE
@@ -45,12 +49,14 @@ bool verify_bmp(bmp_header* header) {
 void print_bmp_header(bmp_header* header) {
     printf("\n");
     printf("* Signature: %c%c\n", header->signature.first, header->signature.second);
-    printf("* File size: 0x%x (%1$d)\n", header->file_size);
-    printf("* Data offset: 0x%x (%1$d)\n", header->data_offset);
+    printf("* File size: 0x%1$x (%1$d)\n", header->file_size);
+    printf("* Data offset: 0x%1$x (%1$d)\n", header->data_offset);
     printf("\n");
 }
 
-int read_bmp() {
+JNIEXPORT jint JNICALL
+Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *env, jobject thiz,
+                                                                       jobject bmp) {
 #ifdef DEBUG
     printf("[+] Starting to parse bmp\n");
 #endif

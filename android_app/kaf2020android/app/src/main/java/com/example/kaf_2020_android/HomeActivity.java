@@ -13,7 +13,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.MediaStore;
+import android.text.Layout;
 import android.util.Base64;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,16 +31,25 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static android.os.StrictMode.*;
 
 public class HomeActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
+    public Bitmap default_img = null;
+
+    static {
+        System.loadLibrary("bmp_parse");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        default_img = BitmapFactory.decodeResource(this.getResources(), R.drawable.default_img);
 
         ThreadPolicy policy = new ThreadPolicy.Builder().permitAll().build();
         setThreadPolicy(policy);
@@ -47,6 +58,9 @@ public class HomeActivity extends AppCompatActivity {
 
         final String username = getIntent().getStringExtra("username");
         final String password = getIntent().getStringExtra("password");
+        final Button send_image_button = (Button) findViewById(R.id.send_image);
+        final Button logout_button = (Button) findViewById(R.id.logout_button);
+
         TextView username_view = (TextView) findViewById(R.id.username_text);
         username_view.setText(String.format("Welcome %s!", username));
 
@@ -60,8 +74,15 @@ public class HomeActivity extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
             }
         });
-
-        final Button send_image_button = (Button) findViewById(R.id.send_image);
+        logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getIntent().removeExtra("password");
+                getIntent().removeExtra("username");
+                switchToMainActivity();
+                finish();
+            }
+        });
         send_image_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +96,13 @@ public class HomeActivity extends AppCompatActivity {
 
                 try {
                     users = server.getUserList(username, password);
-                } catch (IOException | InterruptedException e) {
+                } catch (IOException | InterruptedException | IllegalStateException e) {
                     e.printStackTrace();
+                    showToast("Couldn't get user list!");
+                    return;
+                }
+                if (users == null) {
+                    showToast("You are not an admin.");
                     return;
                 }
 
@@ -88,8 +114,12 @@ public class HomeActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
                             server.sendPicture(username, password, userList[which], b64_image);
+                            ImageView sent_image = (ImageView) findViewById(R.id.profile_pic);
+                            sent_image.setImageBitmap(default_img);
+                            getIntent().removeExtra("send_image");
                         } catch (IOException e) {
                             e.printStackTrace();
+                            showToast("Failed sending image!");
                         }
                     }
                 });
@@ -100,23 +130,26 @@ public class HomeActivity extends AppCompatActivity {
         /*
         Get image from server
          */
-        /*
-        new Thread(new Runnable() {
+
+
+        new Timer().schedule(new TimerTask() {
+            @Override
             public void run() {
                 try {
                     String base64Pic = server.getPicture(username, password);
 
                     if (base64Pic != null) {
-                        byte[] decoded = Base64.decode(base64Pic, Base64.DEFAULT);
+                        byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
                         Bitmap bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
-                        changeProfilePic(bmp);
+                        modifyBitmapGrayscale(bmp);
+                        generateNewAlert(bmp);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-        }).start();
-        */
+        }, 5000, 5000);
+
     }
 
     @Override
@@ -152,13 +185,13 @@ public class HomeActivity extends AppCompatActivity {
             try {
                 int res = bufStream.read(imageBuf);
                 if (res == -1) {
-                    Toast.makeText(HomeActivity.this, "Couldn't load image (too big)", Toast.LENGTH_LONG).show();
+                    showToast("Couldn't load image (too big)");
                     return;
                 }
 
                 final Bitmap bmp = BitmapFactory.decodeByteArray(imageBuf, 0, imageBuf.length);
                 changeProfilePic(bmp);
-                HomeActivity.this.getIntent().putExtra("send_image", Base64.encodeToString(imageBuf, Base64.DEFAULT));
+                HomeActivity.this.getIntent().putExtra("send_image", Base64.encodeToString(imageBuf, Base64.NO_WRAP | Base64.URL_SAFE));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -168,7 +201,32 @@ public class HomeActivity extends AppCompatActivity {
     public void showToast(final String desc) {
         runOnUiThread(new Runnable() {
             public void run() {
-                Toast.makeText(HomeActivity.this, desc, Toast.LENGTH_LONG).show();
+                Toast.makeText(HomeActivity.this, desc, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void switchToMainActivity() {
+        Intent i = new Intent(HomeActivity.this, MainActivity.class);
+        startActivity(i);
+    }
+
+    public void generateNewAlert(final Bitmap bmp) {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+                LayoutInflater layoutInflaterAndroid = LayoutInflater.from(HomeActivity.this);
+                View layout_view = layoutInflaterAndroid.inflate(R.layout.alert, null);
+                builder.setView(layout_view);
+                builder.setCancelable(true);
+
+                final AlertDialog alert_dialog = builder.create();
+                alert_dialog.show();
+
+                // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
+                ImageView img = layout_view.findViewById(R.id.picture_alert);
+
+                img.setImageBitmap(bmp);
             }
         });
     }
@@ -181,4 +239,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
+    private native int modifyBitmapGrayscale(Bitmap bmp);
 }

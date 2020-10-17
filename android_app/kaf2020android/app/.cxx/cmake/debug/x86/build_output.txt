@@ -1,0 +1,7 @@
+Check for working C compiler: F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
+Check for working C compiler: F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works
+Detecting C compiler ABI info
+Detecting C compiler ABI info - done
+Detecting C compile features
+Detecting C compile features - done
+Configuring done

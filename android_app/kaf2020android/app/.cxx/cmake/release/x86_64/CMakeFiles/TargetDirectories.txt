@@ -1,0 +1,3 @@
+C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/libbmp.dir
+C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir

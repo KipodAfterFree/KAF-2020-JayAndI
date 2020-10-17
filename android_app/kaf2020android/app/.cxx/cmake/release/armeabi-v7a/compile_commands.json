@@ -1,0 +1,13 @@
+[
+{
+  "directory": "C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "F:\\android-studio_sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DRELEASE -IC:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -Oz -DNDEBUG  -fPIE   -o CMakeFiles\\libbmp.dir\\src\\bmp_parse.c.o   -c C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\bmp_parse.c",
+  "file": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\bmp_parse.c"
+},
+
+{
+  "directory": "C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "F:\\android-studio_sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi24 --gcc-toolchain=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/android-studio_sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DRELEASE -IC:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/libbmp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -Oz -DNDEBUG  -fPIE   -o CMakeFiles\\libbmp.dir\\src\\compression.c.o   -c C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\compression.c",
+  "file": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\src\\compression.c"
+}
+]

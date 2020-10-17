@@ -14,7 +14,7 @@
 class UserManager{
 private:
     std::vector < std::unique_ptr < User * >> users;
-    std::map <std::string , std::queue<FILE*>*> alerts;
+    std::map <std::string , std::queue<std::pair<FILE*, uintmax_t>*>*> alerts;
 
 private:
     void initialize();
@@ -35,8 +35,19 @@ public:
     bool remove_user(const std::string& name, const std::string& password);
     bool login_user(const std::string& name, const std::string& password);
     bool register_user(const std::string& name, const std::string& password, const std::string& age);
-    void add_to_alert_queue(const std::string& target, FILE* tmpf);
 
+public:
+    void add_to_alert_queue(const std::string& target, FILE* tmpf, uintmax_t file_length);
+    std::pair<FILE*, uintmax_t>* get_from_alert_queue(const std::string& target) {
+        if (this->alerts.find(target) == this->alerts.end())
+            return nullptr;
+        auto alert_queue = this->alerts[target];
+        if (alert_queue->empty())
+            return nullptr;
+        auto first = alert_queue->front();
+        alert_queue->pop();
+        return first;
+    }
 public:
     bool is_admin(const std::string& name);
     bool user_exists(const std::string& name);

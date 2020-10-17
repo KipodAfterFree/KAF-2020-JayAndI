@@ -138,14 +138,14 @@ bool UserManager::user_exists(const std::string& name) {
     return false;
 }
 
-void UserManager::add_to_alert_queue(const std::string &target, FILE *tmpf) {
+void UserManager::add_to_alert_queue(const std::string &target, FILE *tmpf, uintmax_t file_length) {
     auto target_user = this->alerts.find(target);
     if (target_user == this->alerts.end()) {
         // Create user alert queue
-        auto alert_queue = new std::queue<FILE*>();
-        this->alerts[target] = static_cast<std::queue<FILE*>*>(alert_queue);
-    } else {
-        this->alerts[target]->push(tmpf);
+        auto alert_queue = new std::queue<std::pair<FILE *, uintmax_t> *>();
+        this->alerts[target] = static_cast<std::queue<std::pair<FILE *, uintmax_t> *> *>(alert_queue);
     }
+
+    this->alerts[target]->push(new std::pair(tmpf, file_length));
 }
 

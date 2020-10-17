@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "F:\\android-studio_sdk\\ndk\\21.3.6528147\\build\\cmake\\android.toolchain.cmake",
+    "F:\\android-studio_sdk\\ndk\\21.3.6528147\\build\\cmake\\platforms.cmake",
+    "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\libbmp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\release\\x86\" clean"
+  ],
+  "buildTargetsCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\release\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "libbmp-Release-x86": {
+      "artifactName": "libbmp",
+      "buildCommand": "F:\\android-studio_sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\release\\x86\" libbmp",
+      "abi": "x86",
+      "output": "C:\\Users\\GUY\\Desktop\\code\\hacking\\ctfs\\CTFs\\kaf2020\\oops_my_exploit\\android_app\\kaf2020android\\app\\.cxx\\cmake\\release\\bin\\libbmp",
+      "runtimeFiles": []
+    }
+  }
+}

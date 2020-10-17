@@ -1,0 +1,4 @@
+# ninja log v5
+1058	2190	624630987	CMakeFiles/libbmp.dir/src/compression.c.o	e939761ceca91792
+0	2295	624630987	CMakeFiles/libbmp.dir/src/bmp_parse.c.o	5ce9202ca26a4ec5
+2297	3414	624630988	C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/debug/bin/libbmp	6073516caab64703

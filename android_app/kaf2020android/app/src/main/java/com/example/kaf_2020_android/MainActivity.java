@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.authenticate);
 
         readStoragePermission();
+        Intent cur_intent = MainActivity.this.getIntent();
+        // Test if user is logged in already
+        if (cur_intent.hasExtra("username") && cur_intent.hasExtra("password"))
+            switchToHomeActivity(cur_intent.getStringExtra("username"), cur_intent.getStringExtra("password"));
 
         final EditText username = (EditText) findViewById(R.id.input_name);
         final EditText password_text = (EditText) findViewById(R.id.input_password);
@@ -45,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
                             try {
                                 if (server.login(name, password)) {
                                     MainActivity.this.showToast("Login has succeeded!");
-                                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                                    i.putExtra("username", name);
-                                    i.putExtra("password", password);
-                                    startActivity(i);
+                                    switchToHomeActivity(name, password);
+                                    finish();
                                 } else {
                                     MainActivity.this.showToast("Login has failed!");
                                 }
@@ -151,6 +153,13 @@ public class MainActivity extends AppCompatActivity {
                 requestPermission(Manifest.permission.READ_EXTERNAL_STORAGE, REQUEST_PERMISSION_EXTERNAL_STORAGE_STATE);
             }
         }
+    }
+
+    public void switchToHomeActivity(String name,String password) {
+        Intent i = new Intent(MainActivity.this, HomeActivity.class);
+        i.putExtra("username", name);
+        i.putExtra("password", password);
+        startActivity(i);
     }
 
     public void showToast(final String desc) {

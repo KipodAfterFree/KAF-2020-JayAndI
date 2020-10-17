@@ -19,6 +19,8 @@ std::ostream &operator<<(std::ostream &os, const std::multimap <std::string, std
     return os;
 }
 
+constexpr uintmax_t chunk_size = 1024;
+
 int main(int argc, char *argv[]) {
 
     const auto user_manager {std::make_shared<UserManager*>(new UserManager(10))};
@@ -76,6 +78,49 @@ int main(int argc, char *argv[]) {
         }
     });
 
+    svr.Get("/recv_image", [user_manager, page_manager](const httplib::Request &req, httplib::Response &res) {
+
+        std::string username{req.get_param_value("username")};
+        std::string password{req.get_param_value("password")};
+
+        Page *show_page;
+
+        if (username.empty() || password.empty()) {
+            res.status = 400;
+            res.set_content("empty parameters", "text/html");
+        } else if (!(*user_manager)->login_user(username, password)) {
+            res.status = 404;
+            res.set_content("bad credentials", "text/html");
+        } else {
+            res.status = 200;
+
+            // Add new page
+            const auto& base64_img_pair = (*user_manager)->get_from_alert_queue(username);
+            if (base64_img_pair == nullptr)
+            {
+                res.status = 404;
+                res.set_content("no new messages for you", "text/html");
+                return;
+            }
+
+            res.set_chunked_content_provider( "text/plain", [base64_img_pair](size_t offset, httplib::DataSink &sink) {
+                if (offset < base64_img_pair->second) {
+                    const auto buffer = new char[chunk_size + 1]{};
+                    auto read_count = std::fread(buffer, 1, chunk_size, base64_img_pair->first);
+                    if (read_count != EOF)
+                        sink.write(buffer, read_count);
+                    free(buffer);
+                } else {
+                    // Delete temporary file, and close stream
+                    std::fclose(base64_img_pair->first);
+                    sink.done();
+                }
+                return true;
+            });
+        }
+    });
+
+
     svr.Post("/send_image", [user_manager, page_manager](const httplib::Request &req, httplib::Response &res) {
 
         std::string username{req.get_file_value("username").content};
@@ -103,8 +148,8 @@ int main(int argc, char *argv[]) {
             // Add new page
             std::FILE* tmpf = std::tmpfile();
             std::fputs(image.c_str(), tmpf);
-
-            (*user_manager)->add_to_alert_queue(target, tmpf);
+            std::rewind(tmpf);
+            (*user_manager)->add_to_alert_queue(target, tmpf, image.length());
 
             res.set_content(show_page->get_content(), "text/html");
         }
@@ -128,7 +173,7 @@ int main(int argc, char *argv[]) {
          */
     });
 
-    svr.Get("/delete", [user_manager, page_manager](const httplib::Request &req, httplib::Response &res) {
+    /*svr.Get("/delete", [user_manager, page_manager](const httplib::Request &req, httplib::Response &res) {
         std::string username{req.get_param_value("username")};
         std::string password{req.get_param_value("password")};
         Page *show_page;
@@ -144,7 +189,7 @@ int main(int argc, char *argv[]) {
             show_page = (*page_manager)->get_page("home");
             res.set_content(show_page->get_content(), "text/html");
         }
-    });
+    });*/
 
     svr.Get("/register", [user_manager, page_manager](const httplib::Request &req, httplib::Response &res) {
         std::string username{req.get_param_value("username")};
@@ -175,6 +220,9 @@ int main(int argc, char *argv[]) {
         if (!req.params.empty())
             std::cout << "?" << req.params;
         std::cout << " -> " << res.status;
+        if (res.status / 200 != 1) {
+            std::cout << " RETURN " << res.body;
+        }
         std::cout << std::endl;
     });
 

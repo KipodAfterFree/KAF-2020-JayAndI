@@ -16,7 +16,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ServerIntegrate {
-    final String server_url = "http://10.0.0.4:12345";
+    final String server_url = "http://10.0.0.6:12345";
 
     /* access modifiers changed from: package-private */
     public Response sendRequest(String base_url, String endpoint, Map<String, String> params) throws IOException {
@@ -127,7 +127,7 @@ public class ServerIntegrate {
         Map<String, String> params = new HashMap<>();
         params.put("username", username);
         params.put("password", password);
-        Response resp = sendRequest(server_url, "/profile", params);
+        Response resp = sendRequest(server_url, "/recv_image", params);
         if (resp.code() != 200)
             return null;
 
