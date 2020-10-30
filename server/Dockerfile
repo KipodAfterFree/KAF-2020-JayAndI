@@ -1,10 +1,10 @@
 FROM ubuntu:20.04 AS builder
 
 # Install things
-RUN apt -y update
-RUN apt -y install wget curl nano
-RUN apt -y install g++
-RUN apt -y install cmake
+RUN apt-get -y update
+RUN apt-get -y install wget curl nano
+RUN apt-get -y install g++
+RUN apt-get -y install cmake
 
 # Install boost headers
 RUN mkdir /project
