@@ -9,8 +9,7 @@ std::ostream &operator<<(std::ostream &out, User user) {
     return out;
 }
 
-User::User(const std::string &_name, const std::string &_password, unsigned short _age, bool _admin = false) : age{
-        _age}, admin{_admin} {
+User::User(const std::string &_name, const std::string &_password, unsigned short _age, bool _admin = false) : age{_age}, admin{_admin} {
     if (_name.length() >= sizeof(name) || _password.length() >= sizeof(password))
         throw std::length_error{"Name / password too big for class"};
 

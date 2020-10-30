@@ -9,14 +9,17 @@
 #define SERVER_PAGE_H
 
 class Page {
-private:
-    std::unique_ptr<char*> content;
-        public:
+    private:
+        std::unique_ptr<char*> content;
+        std::uintmax_t content_len;
+
+    public:
         Page(fs::path& fname);
         ~Page() = default;
 
-        public:
+    public:
         char* get_content() { return *this->content; };
+        std::uintmax_t get_len() { return this->content_len; };
 };
 
 #endif //SERVER_PAGE_H

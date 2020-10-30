@@ -1,2 +1,2 @@
-include ':app'
+include ':client_app'
 rootProject.name = "kaf-2020-android"
