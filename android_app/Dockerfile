@@ -16,6 +16,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew
 
 # Copy sources
+COPY libbmp libbmp
 COPY kaf2020android/client_app client_app
 
 # Compile app
@@ -32,6 +33,6 @@ COPY docker/entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-COPY --from=builder /build/app/build/outputs/apk/debug/app-debug.apk /client/app.apk
+COPY --from=builder /build/client_app/build/outputs/apk/debug/client_app-debug.apk /client/app.apk
 
 ENTRYPOINT ["/entrypoint.sh"]
