@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="kaf-2020-android/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaf-2020-android.iml" filepath="$PROJECT_DIR$/.idea/modules/kaf-2020-android.iml" group="kaf-2020-android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bot_jni/bot_jni-bot_jni.iml" filepath="$PROJECT_DIR$/.idea/modules/bot_jni/bot_jni-bot_jni.iml" group="bot_jni/bot_jni" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kaf2020android-bot_jni.iml" filepath="$PROJECT_DIR$/.idea/modules/kaf2020android-bot_jni.iml" group="bot_jni" />
     </modules>
   </component>
 </project>

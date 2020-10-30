@@ -1,3 +1,0 @@
-C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/bmp.dir
-C:/Users/GUY/Desktop/code/hacking/ctfs/CTFs/kaf2020/oops_my_exploit/android_app/kaf2020android/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

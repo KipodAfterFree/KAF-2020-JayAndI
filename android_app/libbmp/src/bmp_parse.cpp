@@ -124,29 +124,51 @@ jint convert_to_grayscale(jint color){
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *env, jobject thiz,
-                                                                       jobject bmp) {
-    jclass bmp_class = env->GetObjectClass(bmp);
-    jfieldID native_field = env->GetFieldID(bmp_class, "mNativePtr", "J");
-    jlong native_ptr = env->GetLongField(bmp, native_field);
+Java_com_example_jni_1android_1client_HomeActivity_modifyBitmapGrayscale(JNIEnv *env, jobject thiz, jobject bmp) {
+    jclass bmp_class;
+    jfieldID native_field, width_field, height_field;
+    jlong native_ptr;
+    jint width, height, stride;
+    jint offset = 0;
 
-    jfieldID width_field = env->GetFieldID(bmp_class, "mWidth", "I");
-    jint width = env->GetIntField(bmp, width_field);
+    jsize pixels_len;
+    jmethodID set_pixels_method, get_pixels_method;
+    jintArray pixels;
+    jint *pixels_arr;
 
-    jfieldID height_field = env->GetFieldID(bmp_class, "mHeight", "I");
-    jint height = env->GetIntField(bmp, height_field);
 
-    jmethodID set_pixel_method = env->GetStaticMethodID(bmp_class, "nativeSetPixel", "(JIII)V");
-    /*
-     * TODO: Improve speed, get all array at once, set all array at once
-     */
-    jmethodID get_pixel_method = env->GetStaticMethodID(bmp_class, "nativeGetPixel", "(JII)I");
+    bmp_class = env->GetObjectClass(bmp);
+    native_field = env->GetFieldID(bmp_class, "mNativePtr", "J");
+    native_ptr = env->GetLongField(bmp, native_field);
 
-    for (int i = 0; i < width; ++i)
-        for (int j = 0; j < height; ++j) {
-            jint color_val = env->CallStaticIntMethod(bmp_class, get_pixel_method, native_ptr, i, j);
-            env->CallStaticVoidMethod(bmp_class, set_pixel_method, native_ptr, i, j,
-                                      convert_to_grayscale(color_val));
-        }
+    width_field = env->GetFieldID(bmp_class, "mWidth", "I");
+    width = env->GetIntField(bmp, width_field);
+
+    height_field = env->GetFieldID(bmp_class, "mHeight", "I");
+    height = env->GetIntField(bmp, height_field);
+
+    pixels = env->NewIntArray(height * width);
+
+    // Get native pixel methods
+    set_pixels_method = env->GetStaticMethodID(bmp_class, "nativeSetPixels", "(J[IIIIIII)V");
+    get_pixels_method = env->GetStaticMethodID(bmp_class, "nativeGetPixels", "(J[IIIIIII)V");
+
+    // Acquire pixel array from bitmap
+    stride = width;
+    env->CallStaticVoidMethod(bmp_class, get_pixels_method, native_ptr, pixels, offset, stride, 0, 0, width, height);
+
+    // Loop over all pixels and modify them to grayscale
+    pixels_len = env->GetArrayLength(pixels);
+    pixels_arr = env->GetIntArrayElements(pixels, JNI_FALSE);
+
+    for (int index=0; index < pixels_len; ++index) {
+        jint color = pixels_arr[index];
+        pixels_arr[index] = convert_to_grayscale(color);
+    }
+
+    env->CallStaticVoidMethod(bmp_class, set_pixels_method, native_ptr, pixels, offset, stride, 0, 0, width, height);
+
+    // Delete pixels reference, and free the memory
+    env->DeleteLocalRef(pixels);
     return bmp;
 }

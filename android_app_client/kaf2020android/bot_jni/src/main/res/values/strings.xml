@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">bot-jayandi</string>
+
+    <string name="password_placeholder">Password</string>
+    <string name="name_placeholder">Username</string>
+    <string name="register_placeholder">Register</string>
+    <string name="login_placeholder">Login</string>
+    <string name="name">Name</string>
+
+    <string name="username_text">Username</string>
+    <string name="send_text">Send Image</string>
+    <string name="logout_text">Logout</string>
+
+    <string name="alert_text">Grayscale image has been sent:</string>
+    <string name="alert_button_text">OK</string>
+</resources>
