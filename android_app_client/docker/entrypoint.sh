@@ -14,7 +14,7 @@ adb install /client/app.apk
 
 echo "Starting application"
 
-adb shell am start -n com.example.jni_android_client/com.example.jni_android_client.MainActivity
+adb shell am start -n com.example.kaf_2020_android/com.example.kaf_2020_android.MainActivity
 
 echo "Print logcat"
 
