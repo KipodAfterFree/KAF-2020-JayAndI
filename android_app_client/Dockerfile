@@ -15,7 +15,7 @@ CMD ["/bin/bash"]
 
 FROM thyrlian/android-sdk:5.0 AS client
 
-COPY --from=builder /build/kaf2020android/app/build/outputs/apk/debug/app-debug.apk /client/app.apk
+COPY --from=builder /build/kaf2020android/bot_jni/build/outputs/apk/debug/app-debug.apk /client/app.apk
 
 RUN apt -y update 
 RUN apt -y install adb

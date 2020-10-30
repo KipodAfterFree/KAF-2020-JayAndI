@@ -16,7 +16,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew
 
 # Copy sources
-COPY kaf2020android/app app
+COPY kaf2020android/client_app client_app
 
 # Compile app
 RUN ./gradlew assembleDebug

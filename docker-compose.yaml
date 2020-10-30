@@ -5,6 +5,8 @@ services:
   ports:
    - 8554:8554
    - 5555:5555
+  links:
+   - server:server
   logging:
    driver: none
   devices:
