@@ -37,7 +37,6 @@ int main(int argc, char *argv[]) {
 
     httplib::Server svr;
 
-    // TODO: Change to POST
     svr.Get("/login", [user_manager, page_manager](const httplib::Request &req, httplib::Response &res) {
         std::string username{req.get_param_value("username")};
         std::string password{req.get_param_value("password")};

@@ -38,9 +38,5 @@ void User::memset_strip_newline(const std::string &_name) {
     // Access name member
     char *newline_addr = (char *) this + sizeof(this->a) + sizeof(this->age) + sizeof(this->admin);
 
-    // THIS
     memcpy(newline_addr, _name.c_str() + 1, _name.length() - 1);
-
-    // OR THIS
-    // *newline_addr = _name.at(1);
 }

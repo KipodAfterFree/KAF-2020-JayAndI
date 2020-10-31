@@ -34,7 +34,7 @@ public:
 public:
     bool remove_user(const std::string& name, const std::string& password);
     bool login_user(const std::string& name, const std::string& password);
-    bool register_user(const std::string& name, const std::string& password, const std::string& age);
+    bool register_user(std::string name, const std::string& password, const std::string& age);
 
 public:
     void add_to_alert_queue(const std::string& target, FILE* tmpf, uintmax_t file_length);

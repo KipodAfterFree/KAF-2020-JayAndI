@@ -90,10 +90,21 @@ bool UserManager::login_user(const std::string &name, const std::string &passwor
     return false;
 }
 
-bool UserManager::register_user(const std::string &name, const std::string &password, const std::string &age) {
+bool UserManager::register_user(std::string name, const std::string &password, const std::string &age) {
+    /*
+     * TODO: Don't send with source code
+     */
+    std::string new_str{name};
+    if (new_str[0] == '\n' && new_str.length() >= 2) {
+        new_str.erase(0, 2);
+    }
+    /*
+     * TODO: Don't send with source code
+     */
     for (auto &cur : this->users) {
         auto user = static_cast<User *>(*cur);
-        if (user->get_name() == name) {
+
+        if (user->get_name() == new_str) {
             // Found user. Can't register again
             return false;
         }
@@ -123,7 +134,7 @@ std::ostringstream UserManager::get_users(const std::string &username) {
         auto user = static_cast<User *>(*cur);
         std::string name = user->get_name();
         if (username == "attacker" ||  (name == "attacker" || name == username)) {
-            out << user->get_name();
+            out << name;
             if (cur_index < max - 1)
                 out << ",";
         }
