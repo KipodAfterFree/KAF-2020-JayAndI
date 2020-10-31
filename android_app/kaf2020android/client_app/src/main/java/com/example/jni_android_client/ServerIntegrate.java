@@ -15,7 +15,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ServerIntegrate {
-    final String server_url = "https://jayandi.ctf.kaf.sh"; // "http://10.0.0.1:12345";
+    final String server_url = "http://10.0.0.2:12345"; // "https://jayandi.ctf.kaf.sh"; // "http://10.0.0.1:12345";
 
     /* access modifiers changed from: package-private */
     public Response sendRequest(String base_url, String endpoint, Map<String, String> params) throws IOException {

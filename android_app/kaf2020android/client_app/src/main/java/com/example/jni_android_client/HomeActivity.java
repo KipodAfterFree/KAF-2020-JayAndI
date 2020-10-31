@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     public Bitmap default_img = null;
     public AlertDialog current_alert = null;
-
+    public Timer new_pic_timer = null;
     static {
         System.loadLibrary("bmp");
     }
@@ -128,8 +128,8 @@ public class HomeActivity extends AppCompatActivity {
         /*
         Get image from server
          */
-
-        new Timer().schedule(new TimerTask() {
+        new_pic_timer = new Timer("PICTURE_TIMER");
+        new_pic_timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 try {
@@ -266,6 +266,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void switchToMainActivity() {
+        if (new_pic_timer != null) {
+            new_pic_timer.cancel();
+            new_pic_timer = null;
+        }
         Intent i = new Intent(HomeActivity.this, MainActivity.class);
         startActivity(i);
     }
@@ -295,11 +299,13 @@ public class HomeActivity extends AppCompatActivity {
 
                 HomeActivity.this.current_alert = alert_dialog;
 
-                alert_dialog.show();
-                // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
-                ImageView img = layout_view.findViewById(R.id.picture_alert);
+                if (!isFinishing()) {
+                    alert_dialog.show();
+                    // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
+                    ImageView img = layout_view.findViewById(R.id.picture_alert);
 
-                img.setImageBitmap(bmp);
+                    img.setImageBitmap(bmp);
+                }
             }
         });
     }
