@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -133,21 +135,71 @@ public class HomeActivity extends AppCompatActivity {
                     if (hasOpenedDialogs())
                         return;
 
-                    String base64Pic = server.getPicture(username, password);
+                    String base64PicWithUsername = server.getPicture(username, password);
 
-                    if (base64Pic != null) {
+                    if (base64PicWithUsername != null) {
+                        String[] base64PicWithUsernameArr = base64PicWithUsername.split(":");
+                        String base64Pic = base64PicWithUsernameArr[0];
+                        final String target = base64PicWithUsernameArr[1];
                         byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
                         Bitmap bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
 
-                        modifyBitmapGrayscale(bmp);
+                        final Bitmap new_bmp = modifyBitmapGrayscale(bmp);
                         generateNewAlert(bmp);
+
+                        // Wait for main thread to open dialog
+                        while (!hasOpenedDialogs()) {}
+
+                        // Wait for main thread to close dialog
+                        while (hasOpenedDialogs()) {}
+
+                        Thread.sleep(500);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    chooseResendAlert(new_bmp, server, target);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                     }
-                } catch (IOException e) {
+                } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }, 5000, 5000);
 
+    }
+    private void chooseResendAlert(final Bitmap new_bmp, final ServerIntegrate server, final String target) throws InterruptedException {
+
+
+        String title = "Resend picture";
+        String message = "Would you like to resend the picture?";
+        Intent currentIntent = HomeActivity.this.getIntent();
+
+        final String username = currentIntent.getStringExtra("username");
+        final String password = currentIntent.getStringExtra("password");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Resend bitmap
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        new_bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        try {
+                            server.sendPicture(username, password, target, Base64.encodeToString(stream.toByteArray(), Base64.NO_WRAP | Base64.URL_SAFE));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null);
+        builder.create().show();
     }
 
     @Override
@@ -210,6 +262,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public boolean hasOpenedDialogs() {
+        // Log.e("12345", "Current alert: " + ((this.current_alert != null) ? this.current_alert.toString() : "null"));
         return (this.current_alert != null && this.current_alert.isShowing());
     }
 
@@ -222,19 +275,22 @@ public class HomeActivity extends AppCompatActivity {
                 View layout_view = layoutInflaterAndroid.inflate(R.layout.alert, null);
                 builder.setView(layout_view);
                 builder.setCancelable(true);
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface) {
+                        HomeActivity.this.current_alert = null;
+                    }
+                });
 
                 final AlertDialog alert_dialog = builder.create();
 
                 HomeActivity.this.current_alert = alert_dialog;
 
-                if(!isFinishing())
-                {
-                    alert_dialog.show();
-                    // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
-                    ImageView img = layout_view.findViewById(R.id.picture_alert);
+                alert_dialog.show();
+                // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
+                ImageView img = layout_view.findViewById(R.id.picture_alert);
 
-                    img.setImageBitmap(bmp);
-                }
+                img.setImageBitmap(bmp);
             }
         });
     }
