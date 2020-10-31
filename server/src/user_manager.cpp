@@ -11,8 +11,11 @@
 bool UserManager::add_user(const std::string &name, const std::string &password, unsigned short age, bool admin) {
     if (users.capacity() <= users.size())
         return false;
-
-    users.insert(users.begin(), std::make_unique<User *>(new User{name, password, age, admin}));
+    try {
+        users.insert(users.begin(), std::make_unique<User *>(new User{name, password, age, admin}));
+    } catch (const std::exception& e) {
+        return false;
+    }
     return true;
 }
 

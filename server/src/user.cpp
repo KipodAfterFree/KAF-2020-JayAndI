@@ -13,6 +13,7 @@ User::User(const std::string &_name, const std::string &_password, unsigned shor
     if (_name.length() >= sizeof(name) || _password.length() >= sizeof(password))
         throw std::length_error{"Name / password too big for class"};
 
+    // Exception caught by user_add
     memset_strip_newline(_name);
 
     memset(password, 0, sizeof(password));
