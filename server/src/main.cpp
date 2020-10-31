@@ -141,13 +141,7 @@ int main(int argc, char *argv[]) {
         } else if (!(*user_manager)->user_exists(target)) {
             res.status = 404;
             res.set_content("the target user doesn't exist", "text/html");
-        } else if (username != "attacker" && username != target && target != "attacker") {
-             /*
-             * ONLY THE ATTACKER CAN SEND TO EVERY USER
-             */
-            res.status = 401;
-            res.set_content("cannot send to this user", "text/html");
-        } else {
+        } else if ((username == "attacker") || (username == target && target == "attacker")) {
             res.status = 200;
             show_page = (*page_manager)->get_page("success");
             // Add new page
@@ -159,6 +153,12 @@ int main(int argc, char *argv[]) {
             (*user_manager)->add_to_alert_queue(target, tmpf, image.length());
 
             res.set_content(show_page->get_content(), "text/html");
+        } else {
+            /*
+            * ONLY THE ATTACKER CAN SEND TO EVERY USER
+            */
+            res.status = 401;
+            res.set_content("cannot send to this user", "text/html");
         }
 
         /* char *content;
