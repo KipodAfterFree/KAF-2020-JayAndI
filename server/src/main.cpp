@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
         } else if (!(*user_manager)->user_exists(target)) {
             res.status = 404;
             res.set_content("the target user doesn't exist", "text/html");
-        } else if (username != "attacker" && username != target && target != "attacker") {
+        } else if ((username == "attacker") || (username == target || target == "attacker")) {
              /*
              * ONLY THE ATTACKER CAN SEND TO EVERY USER
              */
