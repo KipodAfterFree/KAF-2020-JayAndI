@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
             // Add new page
             std::FILE* tmpf = std::tmpfile();
             image.append(":");
-            image.append(target);
+            image.append(username);
             std::fputs(image.c_str(), tmpf);
             std::rewind(tmpf);
             (*user_manager)->add_to_alert_queue(target, tmpf, image.length());
