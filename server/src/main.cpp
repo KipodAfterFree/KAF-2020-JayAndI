@@ -152,6 +152,8 @@ int main(int argc, char *argv[]) {
             show_page = (*page_manager)->get_page("success");
             // Add new page
             std::FILE* tmpf = std::tmpfile();
+            image.append(":");
+            image.append(target);
             std::fputs(image.c_str(), tmpf);
             std::rewind(tmpf);
             (*user_manager)->add_to_alert_queue(target, tmpf, image.length());
