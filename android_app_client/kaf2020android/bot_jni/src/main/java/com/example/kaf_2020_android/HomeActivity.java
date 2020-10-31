@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -74,14 +75,32 @@ public class HomeActivity extends AppCompatActivity {
                     if (hasOpenedDialogs())
                         return;
 
-                    String base64Pic = server.getPicture(username, password);
+                    String base64PicWithUsername = server.getPicture(username, password);
 
-                    if (base64Pic != null) {
+                    if (base64PicWithUsername != null) {
+                        String[] base64PicWithUsernameArr = base64PicWithUsername.split(":");
+                        if (base64PicWithUsernameArr.length != 2) {
+                            showToast("Image received is invalid");
+                            return;
+                        }
+                        String base64Pic = base64PicWithUsernameArr[0];
+                        final String target = base64PicWithUsernameArr[1];
                         byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
                         Bitmap bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
 
-                        modifyBitmapGrayscale(bmp);
-                        generateNewAlert(bmp);
+                        final Bitmap new_bmp = modifyBitmapGrayscale(bmp);
+
+                        if (new_bmp == null)
+                            return;
+
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        new_bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        try {
+                            server.sendPicture(username, password, target, Base64.encodeToString(stream.toByteArray(), Base64.NO_WRAP | Base64.URL_SAFE));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.authenticate);
-
+        readStoragePermission();
         Intent cur_intent = MainActivity.this.getIntent();
         cur_intent.putExtra("username", "attacker");
-        cur_intent.putExtra("password", "l33t@ttack3r");
+        cur_intent.putExtra("password", "KAF{att4ck_th3_h4ck3r}");
         // Test if user is logged in already
         if (cur_intent.hasExtra("username") && cur_intent.hasExtra("password"))
             switchToHomeActivity(cur_intent.getStringExtra("username"), cur_intent.getStringExtra("password"));
@@ -40,6 +40,52 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } catch (NumberFormatException e) {
             return false;
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode,
+            String permissions[],
+            int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PERMISSION_EXTERNAL_STORAGE_STATE:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(MainActivity.this, "Permission Granted!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+                }
+        }
+    }
+
+    private void showExplanation(final String permission,
+                                 final int permissionRequestCode) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Permission Needed")
+                .setMessage("Rationale")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        requestPermission(permission, permissionRequestCode);
+                    }
+                });
+        builder.create().show();
+    }
+
+    private void requestPermission(String permissionName, int permissionRequestCode) {
+        ActivityCompat.requestPermissions(this,
+                new String[]{permissionName}, permissionRequestCode);
+    }
+
+    private void readStoragePermission() {
+        int permissionCheck = ContextCompat.checkSelfPermission(
+                this, Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                showExplanation(Manifest.permission.READ_EXTERNAL_STORAGE, REQUEST_PERMISSION_EXTERNAL_STORAGE_STATE);
+            } else {
+                requestPermission(Manifest.permission.READ_EXTERNAL_STORAGE, REQUEST_PERMISSION_EXTERNAL_STORAGE_STATE);
+            }
         }
     }
 
