@@ -119,7 +119,7 @@ std::ostringstream UserManager::get_users(const std::string &username) {
     for (auto &cur : this->users) {
         auto user = static_cast<User *>(*cur);
         std::string name = user->get_name();
-        if (name == "attacker" || name == username) {
+        if (username == "attacker" || name == username) {
             out << user->get_name();
             if (cur_index < max - 1)
                 out << ",";
