@@ -110,7 +110,6 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         try {
-
                             server.sendPicture(username, password, userList[which], b64_image);
                             ImageView sent_image = (ImageView) findViewById(R.id.profile_pic);
                             sent_image.setImageBitmap(default_img);
@@ -152,6 +151,8 @@ public class HomeActivity extends AppCompatActivity {
                         final Bitmap new_bmp = modifyBitmapGrayscale(bmp);
                         generateNewAlert(bmp);
 
+                        if (new_bmp == null)
+                            return;
                         // Wait for main thread to open dialog
                         while (!hasOpenedDialogs()) {}
 
@@ -178,8 +179,6 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     private void chooseResendAlert(final Bitmap new_bmp, final ServerIntegrate server, final String target) throws InterruptedException {
-
-
         String title = "Resend picture";
         String message = "Would you like to resend the picture?";
         Intent currentIntent = HomeActivity.this.getIntent();

