@@ -27,8 +27,6 @@
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/modules/bot_jni/bot_jni-bot_jni.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/modules/bot_jni/bot_jni-bot_jni.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/bot_jni/src/main/java/com/example/kaf_2020_android/ServerIntegrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/bot_jni/src/main/java/com/example/kaf_2020_android/ServerIntegrate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

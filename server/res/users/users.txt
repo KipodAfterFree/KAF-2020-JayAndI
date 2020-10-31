@@ -1,2 +1,1 @@
-attacker,l33t@ttack3r,4,true
-test,test,3,true
+attacker,KAF{att4ck1ng_th3_att4ck3r5},4,true
