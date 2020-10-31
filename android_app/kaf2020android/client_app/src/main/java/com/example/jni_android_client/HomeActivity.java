@@ -274,7 +274,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public boolean hasOpenedDialogs() {
-        // Log.e("12345", "Current alert: " + ((this.current_alert != null) ? this.current_alert.toString() : "null"));
         return (this.current_alert != null && this.current_alert.isShowing());
     }
 
@@ -300,7 +299,6 @@ public class HomeActivity extends AppCompatActivity {
 
                 if (!isFinishing()) {
                     alert_dialog.show();
-                    // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
                     ImageView img = layout_view.findViewById(R.id.picture_alert);
 
                     img.setImageBitmap(bmp);

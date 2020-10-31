@@ -152,7 +152,7 @@ jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray waterma
     JavaVM* jvm;
     jclass watermarkClass;
     jmethodID set_watermark;
-    constexpr jint size = 70;
+    constexpr jint size = 35;
     constexpr jint alpha = 255;
     constexpr jint color = 0xFF0000; // Red
     constexpr jint x = size / 2, y = size / 2;
