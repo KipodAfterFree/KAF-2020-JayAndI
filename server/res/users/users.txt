@@ -1,1 +1,1 @@
-attacker,KAF{att4ck_th3_att4ck3r},4,true
+attacker,KAF{att4ck_th3_h4ck3r},4,true
