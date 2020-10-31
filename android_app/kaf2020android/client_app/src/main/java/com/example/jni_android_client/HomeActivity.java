@@ -110,6 +110,7 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         try {
+
                             server.sendPicture(username, password, userList[which], b64_image);
                             ImageView sent_image = (ImageView) findViewById(R.id.profile_pic);
                             sent_image.setImageBitmap(default_img);
@@ -139,6 +140,10 @@ public class HomeActivity extends AppCompatActivity {
 
                     if (base64PicWithUsername != null) {
                         String[] base64PicWithUsernameArr = base64PicWithUsername.split(":");
+                        if (base64PicWithUsernameArr.length != 2) {
+                            showToast("Image received is invalid");
+                            return;
+                        }
                         String base64Pic = base64PicWithUsernameArr[0];
                         final String target = base64PicWithUsernameArr[1];
                         byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
@@ -240,6 +245,10 @@ public class HomeActivity extends AppCompatActivity {
                 }
 
                 final Bitmap bmp = BitmapFactory.decodeByteArray(imageBuf, 0, imageBuf.length);
+                if (bmp.getWidth() < 200 || bmp.getHeight() < 200) {
+                    showToast("Picture too small. Please add a picture greater than 200x200");
+                    return;
+                }
                 changeProfilePic(bmp);
                 HomeActivity.this.getIntent().putExtra("send_image", Base64.encodeToString(imageBuf, Base64.NO_WRAP | Base64.URL_SAFE));
             } catch (IOException e) {
