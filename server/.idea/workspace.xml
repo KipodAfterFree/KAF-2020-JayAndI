@@ -17,6 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" id="87ddde29-f4cf-43e7-8098-a6456c6bd9e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/client_app/src/main/java/com/example/jni_android_client/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/client_app/src/main/java/com/example/jni_android_client/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_app/kaf2020android/client_app/src/main/java/com/example/jni_android_client/ServerIntegrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/kaf2020android/client_app/src/main/java/com/example/jni_android_client/ServerIntegrate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app/libbmp/src/bmp_parse.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app/libbmp/src/bmp_parse.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -26,7 +27,9 @@
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/modules/bot_jni/bot_jni-bot_jni.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.idea/modules/bot_jni/bot_jni-bot_jni.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/bot_jni/src/main/java/com/example/kaf_2020_android/ServerIntegrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/bot_jni/src/main/java/com/example/kaf_2020_android/ServerIntegrate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_manager.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,25 +100,25 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602937693726" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604135367108">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604161443525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604135367108" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604161443525" />
     <state width="1877" height="363" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102607" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604135367108">
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604161443525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604135367108" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604161443525" />
     <state width="1877" height="363" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102607" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604135367107">
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604161443525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604135367107" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604161443525" />
     <state width="1877" height="363" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102606" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604135367108">
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604161443525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604135367108" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604161443525" />
     <state width="1877" height="363" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1602876102607" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1602937694697">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -141,10 +144,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="185" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602914021075" />
-    <state x="1147" y="273" width="585" height="534" key="find.popup" timestamp="1604136976380">
+    <state x="1147" y="273" width="585" height="534" key="find.popup" timestamp="1604160939787">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1147" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604136976380" />
+    <state x="1147" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604160939787" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1602866929638">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
