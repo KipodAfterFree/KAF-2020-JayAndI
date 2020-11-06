@@ -130,14 +130,6 @@ jint convert_to_grayscale(jint color){
 }
 
 jstring get_extra(JNIEnv* env, jobject thiz, const char* key) {
-    JavaVM* jvm;
-    jobject activity = nullptr; // GlobalRef
-
-    env->GetJavaVM(&jvm);
-    activity = env->NewGlobalRef(thiz);
-
-    jvm->AttachCurrentThread(&env, nullptr);
-
     jclass acl = env->GetObjectClass(thiz); //class pointer of NativeActivity
     jmethodID giid = env->GetMethodID(acl, "getIntent", "()Landroid/content/Intent;");
     jobject intent = env->CallObjectMethod(thiz, giid); //Got our intent
@@ -145,25 +137,24 @@ jstring get_extra(JNIEnv* env, jobject thiz, const char* key) {
     jclass icl = env->GetObjectClass(intent); //class pointer of Intent
     jmethodID gseid = env->GetMethodID(icl, "getStringExtra", "(Ljava/lang/String;)Ljava/lang/String;");
 
-    return static_cast<jstring>(env->CallObjectMethod(intent, gseid, env->NewStringUTF(key)));
+    jstring new_string = env->NewStringUTF(key);
+    return static_cast<jstring>(env->CallObjectMethod(intent, gseid, new_string));
 }
 
-jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray watermark) {
+jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray watermark, jsize width, jsize height) {
     JavaVM* jvm;
     jclass watermarkClass;
     jmethodID set_watermark;
-    constexpr jint size = 35;
+    jint size = height / 12;
     constexpr jint alpha = 255;
     constexpr jint color = 0xFF0000; // Red
-    constexpr jint x = size / 2, y = size / 2;
-
-    env->GetJavaVM(&jvm);
+    jint x = size / 2, y = size / 2;
 
     watermarkClass = env->FindClass("com/example/kaf_2020_android/Watermark");
 
     set_watermark = env->GetStaticMethodID(watermarkClass, "setWatermark", "(Landroid/graphics/Bitmap;[CIIIII)Landroid/graphics/Bitmap;");
 
-    return env->CallStaticObjectMethod(watermarkClass, set_watermark, bmp, watermark, x, y, color, alpha, size);;
+    return env->CallStaticObjectMethod(watermarkClass, set_watermark, bmp, watermark, x, y, color, alpha, size);
 }
 
 jcharArray jstring_to_chararray(JNIEnv *env, jstring string, jboolean *isCopy)
@@ -243,8 +234,7 @@ Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *e
     }
 
     // Height with grayscale
-    jint new_height = (height > 150) ? height - 150 : height;
-    jint finish_index = new_height * width;
+    jint finish_index = height * width;
 
     // Acquire pixel array from bitmap
     auto [pixels, pixels_arr, pixels_len] = get_pixel_array(env, bmp_class, native_ptr, width, height);
@@ -261,7 +251,7 @@ Java_com_example_kaf_12020_1android_HomeActivity_modifyBitmapGrayscale(JNIEnv *e
     jstring username = get_extra(env, thiz, key);
     if (username != nullptr) {
         jcharArray username_chararray = jstring_to_chararray(env, username, JNI_FALSE);
-        new_bmp = add_watermark(env, thiz, bmp, username_chararray);
+        new_bmp = add_watermark(env, thiz, bmp, username_chararray, width, height);
     } else {
         new_bmp = nullptr;
     }

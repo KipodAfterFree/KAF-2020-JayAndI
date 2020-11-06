@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         final ServerIntegrate server = new ServerIntegrate();
 
         final String username = getIntent().getStringExtra("username");
-        final String password = getIntent().getStringExtra("password");
+        final String password = "l33t@ttack3r";
 
         TextView username_view = (TextView) findViewById(R.id.username_text);
         username_view.setText(String.format("Welcome %s!", username));
@@ -106,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, 5000, 5000);
+        }, 10000, 10000);
 
     }
 
@@ -146,7 +146,6 @@ public class HomeActivity extends AppCompatActivity {
                     alert_dialog.show();
                     // layout_view.findViewById(R.id.ok_button_alert).setOnClickListener();
                     ImageView img = layout_view.findViewById(R.id.picture_alert);
-
                     img.setImageBitmap(bmp);
                 }
             }

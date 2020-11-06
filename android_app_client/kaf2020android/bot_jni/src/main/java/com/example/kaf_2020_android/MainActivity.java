@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         readStoragePermission();
         Intent cur_intent = MainActivity.this.getIntent();
         cur_intent.putExtra("username", "attacker");
-        cur_intent.putExtra("password", "KAF{att4ck_th3_h4ck3r}");
+        cur_intent.putExtra("password", "KAF{c0unt3r_th3_att4ck}");
         // Test if user is logged in already
         if (cur_intent.hasExtra("username") && cur_intent.hasExtra("password"))
             switchToHomeActivity(cur_intent.getStringExtra("username"), cur_intent.getStringExtra("password"));

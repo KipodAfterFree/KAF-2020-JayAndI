@@ -3,6 +3,7 @@ package com.example.kaf_2020_android;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.util.TypedValue;
 
 public class Watermark {
     public static Bitmap setWatermark(Bitmap src, char[] watermark, int x, int y, int color, int alpha, int size) {
@@ -18,7 +19,6 @@ public class Watermark {
         paint.setAlpha(alpha);
         paint.setTextSize(size);
         paint.setAntiAlias(true);
-
         canvas.drawText("Resent by: " + String.valueOf(watermark), x, h - y, paint);
 
         return result;
