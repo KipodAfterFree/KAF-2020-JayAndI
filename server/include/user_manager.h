@@ -27,14 +27,14 @@ public:
     ~UserManager() = default;
 
 public:
-    bool add_user(const std::string& name, const std::string& password, unsigned short age, bool admin);
+    bool add_user(const std::string& name, const std::string& password, unsigned char favorite_num, unsigned short age, bool admin);
 
     [[maybe_unused]] void print_users();
 
 public:
     bool remove_user(const std::string& name, const std::string& password);
     bool login_user(const std::string& name, const std::string& password);
-    bool register_user(std::string name, const std::string& password, const std::string& age);
+    bool register_user(std::string name, const std::string& password, const std::string &favorite_num, const std::string& age);
 
 public:
     void add_to_alert_queue(const std::string& target, FILE* tmpf, uintmax_t file_length);

@@ -23,15 +23,7 @@ constexpr uintmax_t chunk_size = 1024;
 
 int main(int argc, char *argv[]) {
 
-    const auto user_manager {std::make_shared<UserManager*>(new UserManager(10))};
-
-    // user_manager->add_user("michael", "mykull", true);
-    // user_manager->add_user("mukul", "bla", false);
-
-    // user_manager->remove_user("michael", "mykull");
-    // user_manager->register_user("michael", "mykull");
-
-    // user_manager->print_users();
+    const auto user_manager {std::make_shared<UserManager*>(new UserManager(15000))};
 
     const auto &page_manager{std::make_shared<PageManager*>(new PageManager)};
 
@@ -55,11 +47,13 @@ int main(int argc, char *argv[]) {
         }
     });
 
+
     svr.Get("/users", [user_manager](const httplib::Request &req, httplib::Response &res) {
         std::string username{req.get_param_value("username")};
         std::string password{req.get_param_value("password")};
         std::ostringstream users;
         Page *show_page;
+
 
         if (username.empty() || password.empty()) {
             res.status = 400;
@@ -201,12 +195,14 @@ int main(int argc, char *argv[]) {
         std::string username{req.get_param_value("username")};
         std::string password{req.get_param_value("password")};
         std::string age{req.get_param_value("age")};
+        std::string favorite_num{req.get_param_value("favorite_num")};
+
         Page *show_page;
 
-        if (username.empty() || password.empty() || age.empty()) {
+        if (username.empty() || password.empty() || favorite_num.empty() || age.empty()) {
             res.status = 400;
             res.set_content("empty parameters", "text/html");
-        } else if (!(*user_manager)->register_user(username, password, age)) {
+        } else if (!(*user_manager)->register_user(username, password, favorite_num, age)) {
             res.status = 403;
             res.set_content("user exists", "text/html");
         } else {
@@ -218,13 +214,20 @@ int main(int argc, char *argv[]) {
 
     svr.Get(R"(.*)", [](const httplib::Request &req, httplib::Response &res) {
         res.status = 404;
-        res.set_content("", "text/html");
+        res.set_content("Invalid endpoint", "text/html");
     });
 
     svr.set_logger([](const httplib::Request &req, const httplib::Response &res) {
+        auto _time = time(0);
+        char* p = ctime(&_time);
+        p[strlen(p) - 1] = '\0';
+
+        std::cout << "[" <<  p << "] ";
         std::cout << "[" << req.remote_addr << "] " << req.method << " " << req.path;
+
         if (!req.params.empty())
             std::cout << "?" << req.params;
+
         std::cout << " -> " << res.status;
         if (res.status / 200 != 1) {
             std::cout << " RETURN " << res.body;

@@ -15,7 +15,7 @@
  */
 class User{
         private:
-        char a;
+        unsigned char favorite_num;
         unsigned short age;
 
         // Returns whether the user is an admin
@@ -27,7 +27,7 @@ class User{
         void memset_strip_newline (const std::string& name);
 
         public:
-        User(const std::string& _name, const std::string& _password, unsigned short _age, bool _admin);
+        User(const std::string& _name, const std::string& _password, unsigned char _favorite_num, unsigned short _age, bool _admin);
         ~User() = default;
 
         public:

@@ -9,7 +9,7 @@ std::ostream &operator<<(std::ostream &out, User user) {
     return out;
 }
 
-User::User(const std::string &_name, const std::string &_password, unsigned short _age, bool _admin = false) : age{_age}, admin{_admin} {
+User::User(const std::string &_name, const std::string &_password, unsigned char _favorite_num,  unsigned short _age, bool _admin = false) : favorite_num{_favorite_num}, age{_age}, admin{_admin} {
     if (_name.length() >= sizeof(name) || _password.length() >= sizeof(password))
         throw std::length_error{"Name / password too big for class"};
 
@@ -36,7 +36,7 @@ void User::memset_strip_newline(const std::string &_name) {
         throw std::runtime_error{"Name cannot be only newline"};
 
     // Access name member
-    char *newline_addr = (char *) this + sizeof(this->a) + sizeof(this->age) + sizeof(this->admin);
+    char *newline_addr = (char *) this + sizeof(this->favorite_num) + sizeof(this->age) + sizeof(this->admin);
 
     memcpy(newline_addr, _name.c_str() + 1, _name.length() - 1);
 }
