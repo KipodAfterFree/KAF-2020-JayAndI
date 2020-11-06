@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.jni_android_client",
+  "applicationId": "com.example.kaf_2020_android",
   "variantName": "release",
   "elements": [
     {
@@ -14,7 +14,7 @@
       "versionCode": 1,
       "versionName": "1.0",
       "enabled": true,
-      "outputFile": "app-release.apk"
+      "outputFile": "bot_jni-release.apk"
     }
   ]
 }

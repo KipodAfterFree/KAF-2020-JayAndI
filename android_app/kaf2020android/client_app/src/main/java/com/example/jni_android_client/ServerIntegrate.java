@@ -63,10 +63,11 @@ public class ServerIntegrate {
     }
 
     /* access modifiers changed from: package-private */
-    public Boolean register(String username, String password, String age) throws IOException {
+    public Boolean register(String username, String password, String favorite_num, String age) throws IOException {
         Map<String, String> params = new HashMap<>();
         params.put("username", username);
         params.put("password", password);
+        params.put("favorite_num", favorite_num);
         params.put("age", age);
         Response resp = sendRequest(server_url, "/register", params);
         return resp.code() == 200;

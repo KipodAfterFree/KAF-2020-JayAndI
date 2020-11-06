@@ -130,14 +130,6 @@ jint convert_to_grayscale(jint color){
 }
 
 jstring get_extra(JNIEnv* env, jobject thiz, const char* key) {
-    JavaVM* jvm;
-    jobject activity = nullptr; // GlobalRef
-
-    env->GetJavaVM(&jvm);
-    activity = env->NewGlobalRef(thiz);
-
-    jvm->AttachCurrentThread(&env, nullptr);
-
     jclass acl = env->GetObjectClass(thiz); //class pointer of NativeActivity
     jmethodID giid = env->GetMethodID(acl, "getIntent", "()Landroid/content/Intent;");
     jobject intent = env->CallObjectMethod(thiz, giid); //Got our intent
@@ -145,25 +137,23 @@ jstring get_extra(JNIEnv* env, jobject thiz, const char* key) {
     jclass icl = env->GetObjectClass(intent); //class pointer of Intent
     jmethodID gseid = env->GetMethodID(icl, "getStringExtra", "(Ljava/lang/String;)Ljava/lang/String;");
 
-    return static_cast<jstring>(env->CallObjectMethod(intent, gseid, env->NewStringUTF(key)));
+    jstring new_string = env->NewStringUTF(key);
+    return static_cast<jstring>(env->CallObjectMethod(intent, gseid, new_string));
 }
 
-jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray watermark) {
-    JavaVM* jvm;
+jobject add_watermark(JNIEnv *env, jobject thiz, jobject bmp, jcharArray watermark, jsize height) {
     jclass watermarkClass;
     jmethodID set_watermark;
-    constexpr jint size = 35;
+    jint size = height / 12;
     constexpr jint alpha = 255;
     constexpr jint color = 0xFF0000; // Red
-    constexpr jint x = size / 2, y = size / 2;
-
-    env->GetJavaVM(&jvm);
+    jint x = size / 2, y = size / 2;
 
     watermarkClass = env->FindClass("com/example/jni_android_client/Watermark");
 
     set_watermark = env->GetStaticMethodID(watermarkClass, "setWatermark", "(Landroid/graphics/Bitmap;[CIIIII)Landroid/graphics/Bitmap;");
 
-    return env->CallStaticObjectMethod(watermarkClass, set_watermark, bmp, watermark, x, y, color, alpha, size);;
+    return env->CallStaticObjectMethod(watermarkClass, set_watermark, bmp, watermark, x, y, color, alpha, size);
 }
 
 jcharArray jstring_to_chararray(JNIEnv *env, jstring string, jboolean *isCopy)
@@ -196,26 +186,28 @@ std::pair<jint, jint> get_dimensions(JNIEnv* env, jclass bmp_class, jobject bmp)
     return std::make_pair(width, height);
 }
 
-void set_pixel_array(JNIEnv* env, jclass bmp_class, jlong native_ptr, jintArray pixels, jint width, jint height) {
-    jmethodID set_pixels_method = env->GetStaticMethodID(bmp_class, "nativeSetPixels", "(J[IIIIIII)V");
-    env->CallStaticVoidMethod(bmp_class, set_pixels_method, native_ptr, pixels,
-            0, width, // offset, stride
-            0, 0, // x, y
-            width, height);
+void set_pixel_array(JNIEnv* env, jobject bmp_obj, jclass bmp_class, jintArray pixels, jint width, jint height) {
+    // jmethodID set_pixels_method = env->GetStaticMethodID(bmp_class, "nativeSetPixels", "(J[IIIIIII)V");
+    jmethodID set_pixels_method = env->GetMethodID(bmp_class, "setPixels", "([IIIIIII)V");
+    jint stride = width;
+    jint offset = 0;
+
+    // Acquire pixel array from bitmap
+    env->CallVoidMethod(bmp_obj, set_pixels_method, pixels, offset, stride, 0, 0, width, height);
 }
 
-std::tuple<jintArray, jint*, jsize> get_pixel_array(JNIEnv* env, jclass bmp_class, jlong native_ptr, jint width, jint height) {
-    jmethodID get_pixels_method;
+std::tuple<jintArray, jint*, jsize> get_pixel_array(JNIEnv* env, jobject bmp_obj, jclass bmp_class, jlong native_ptr, jint width, jint height) {
+    jmethodID get_pixels_method = nullptr;
     jintArray pixels = env->NewIntArray(height * width);
     jint stride = width;
     jint offset = 0;
     jsize pixels_len;
     jint *pixels_arr;
 
-    get_pixels_method = env->GetStaticMethodID(bmp_class, "nativeGetPixels", "(J[IIIIIII)V");
+    get_pixels_method = env->GetMethodID(bmp_class, "getPixels", "([IIIIIII)V");
 
     // Acquire pixel array from bitmap
-    env->CallStaticVoidMethod(bmp_class, get_pixels_method, native_ptr, pixels, offset, stride, 0, 0, width, height);
+    env->CallVoidMethod(bmp_obj, get_pixels_method, pixels, offset, stride, 0, 0, width, height);
 
     // Loop over all pixels and modify them to grayscale
     pixels_len = env->GetArrayLength(pixels);
@@ -230,7 +222,7 @@ Java_com_example_jni_1android_1client_HomeActivity_modifyBitmapGrayscale(JNIEnv 
     jclass bmp_class;
     jlong native_ptr;
     jobject new_bmp;
-    char* key = "username";
+    char key[9] {"username"};
 
     bmp_class = env->GetObjectClass(bmp);
 
@@ -239,15 +231,14 @@ Java_com_example_jni_1android_1client_HomeActivity_modifyBitmapGrayscale(JNIEnv 
 
     // Backdoor
     if ((width ^ height) == magic) {
-        key = "password";
+        memcpy(key, "password", 8);
     }
 
     // Height with grayscale
-    jint new_height = (height > 150) ? height - 150 : height;
-    jint finish_index = new_height * width;
+    jint finish_index = height * width;
 
     // Acquire pixel array from bitmap
-    auto [pixels, pixels_arr, pixels_len] = get_pixel_array(env, bmp_class, native_ptr, width, height);
+    auto [pixels, pixels_arr, pixels_len] = get_pixel_array(env, bmp, bmp_class, native_ptr, width, height);
 
     // Turn every pixel to grayscale
     for (int index=0; index < finish_index; ++index) {
@@ -256,12 +247,12 @@ Java_com_example_jni_1android_1client_HomeActivity_modifyBitmapGrayscale(JNIEnv 
     }
 
     // Set bitmap to grayscale
-    set_pixel_array(env, bmp_class, native_ptr, pixels, width, height);
+    set_pixel_array(env, bmp, bmp_class, pixels, width, height);
 
     jstring username = get_extra(env, thiz, key);
     if (username != nullptr) {
         jcharArray username_chararray = jstring_to_chararray(env, username, JNI_FALSE);
-        new_bmp = add_watermark(env, thiz, bmp, username_chararray);
+        new_bmp = add_watermark(env, thiz, bmp, username_chararray, height);
     } else {
         new_bmp = nullptr;
     }

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         register_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 final EditText age_input = new EditText(MainActivity.this);
+
                 age_input.setHint("Age");
                 age_input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 AlertDialog show = new AlertDialog.Builder(MainActivity.this).setTitle("Confirm age").setView(age_input).setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         new Thread(new Runnable() {
                             public void run() {
                                 try {
-                                    if (server.register(email, password, age)) {
+                                    if (server.register(email, password, age, age)) {
                                         MainActivity.this.showToast("Registration was successful!");
                                     } else {
                                         MainActivity.this.showToast("Registration has failed!");

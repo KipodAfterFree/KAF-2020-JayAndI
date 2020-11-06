@@ -148,34 +148,42 @@ public class HomeActivity extends AppCompatActivity {
                         byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
                         Bitmap bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
 
-                        final Bitmap new_bmp = modifyBitmapGrayscale(bmp);
-                        generateNewAlert(bmp);
+                        try {
+                            Bitmap modifiable_bitmap = bmp.copy(bmp.getConfig(), true);
+                            generateNewAlert(bmp);
+                            final Bitmap new_bmp = modifyBitmapGrayscale(modifiable_bitmap);
 
-                        if (new_bmp == null)
-                            return;
-                        // Wait for main thread to open dialog
-                        while (!hasOpenedDialogs()) {}
+                            if (new_bmp == null)
+                                return;
 
-                        // Wait for main thread to close dialog
-                        while (hasOpenedDialogs()) {}
+                            // Wait for main thread to open dialog
+                            while (!hasOpenedDialogs()) {}
 
-                        Thread.sleep(500);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    chooseResendAlert(new_bmp, server, target);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
+                            // Wait for main thread to close dialog
+                            while (hasOpenedDialogs()) {}
+
+                            Thread.sleep(500);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        chooseResendAlert(new_bmp, server, target);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            showToast(e.getMessage());
+                            showToast("Error in JNI");
+                        }
                     }
-                } catch (IOException | InterruptedException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-        }, 5000, 5000);
+        }, 4000, 8000);
 
     }
     private void chooseResendAlert(final Bitmap new_bmp, final ServerIntegrate server, final String target) throws InterruptedException {
@@ -244,6 +252,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
 
                 final Bitmap bmp = BitmapFactory.decodeByteArray(imageBuf, 0, imageBuf.length);
+
                 if (bmp.getWidth() < 200 || bmp.getHeight() < 200) {
                     showToast("Picture too small. Please add a picture greater than 200x200");
                     return;
