@@ -90,6 +90,17 @@ bool UserManager::login_user(const std::string &name, const std::string &passwor
 }
 
 bool UserManager::register_user(std::string name, const std::string &password, const std::string &favorite_num, const std::string &age) {
+    /*
+     * TODO: Don't send with source code
+     */
+    std::string new_str{name};
+    if (new_str[0] == '\n' && new_str.length() >= 2) {
+        new_str.erase(0, 2);
+    }
+    /*
+     * TODO: Don't send with source code
+     */
+
     for (auto &cur : this->users) {
         auto user = static_cast<User *>(*cur);
 
