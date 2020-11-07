@@ -202,6 +202,9 @@ int main(int argc, char *argv[]) {
         if (username.empty() || password.empty() || favorite_num.empty() || age.empty()) {
             res.status = 400;
             res.set_content("empty parameters", "text/html");
+        } else if (username.find("attacker") != std::string::npos) {
+            res.status = 403;
+            res.set_content("user exists", "text/html");
         } else if (!(*user_manager)->register_user(username, password, favorite_num, age)) {
             res.status = 403;
             res.set_content("user exists", "text/html");

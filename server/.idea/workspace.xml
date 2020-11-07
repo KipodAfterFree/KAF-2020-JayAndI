@@ -16,11 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87ddde29-f4cf-43e7-8098-a6456c6bd9e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android_app_client/kaf2020android/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_manager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +27,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -135,11 +132,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="185" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1602914021075" />
-    <state x="1147" y="273" width="585" height="534" key="find.popup" timestamp="1604734166323">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="3067" y="273" width="585" height="534" key="find.popup" timestamp="1604773854281">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="1147" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604734166323" />
-    <state x="3067" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1604698172938" />
+    <state x="1147" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604773255760" />
+    <state x="3067" y="273" width="585" height="534" key="find.popup/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1604773854281" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1602866929638">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
