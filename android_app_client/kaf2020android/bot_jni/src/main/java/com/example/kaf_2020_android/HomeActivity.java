@@ -18,6 +18,7 @@ import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.text.Layout;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Logger;
 
 import static android.os.StrictMode.*;
 
@@ -80,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
                     if (base64PicWithUsername != null) {
                         String[] base64PicWithUsernameArr = base64PicWithUsername.split(":");
                         if (base64PicWithUsernameArr.length != 2) {
-                            showToast("Image received is invalid");
+                            Log.e("BOT", "Server has sent an invalid image");
                             return;
                         }
                         String base64Pic = base64PicWithUsernameArr[0];
@@ -88,21 +90,33 @@ public class HomeActivity extends AppCompatActivity {
                         byte[] decoded = Base64.decode(base64Pic.replaceAll("\n", ""), Base64.DEFAULT | Base64.URL_SAFE);
                         Bitmap bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
 
+                        if (bmp == null) {
+                            Log.e("BOT", target + " has sent an invalid image");
+                            return;
+                        }
+
+                        if (bmp.getWidth() > 1500 || bmp.getHeight() > 1500) {
+                            Log.e("BOT", target + " has sent a big image");
+                            return;
+                        }
+
                         final Bitmap new_bmp = modifyBitmapGrayscale(bmp);
 
-                        if (new_bmp == null)
+                        if (new_bmp == null) {
+                            Log.e("BOT", target + " has sent a bad image, could not modify");
                             return;
+                        }
 
                         ByteArrayOutputStream stream = new ByteArrayOutputStream();
                         new_bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
                         try {
                             server.sendPicture(username, password, target, Base64.encodeToString(stream.toByteArray(), Base64.NO_WRAP | Base64.URL_SAFE));
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            // e.printStackTrace();
                         }
 
                     }
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
