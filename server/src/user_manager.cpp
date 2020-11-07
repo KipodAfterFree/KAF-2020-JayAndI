@@ -138,9 +138,11 @@ std::ostringstream UserManager::get_users(const std::string &username) {
         std::string name = user->get_name();
 		
 		// Add user to name list
-		out << name;
-		if (cur_index < max - 1)
-			out << ",";
+        if (username == "attacker" ||  (name == "attacker" || name == username)) {
+            out << name;
+            if (cur_index < max - 1)
+                out << ",";
+        }
 
         ++cur_index;
     }
