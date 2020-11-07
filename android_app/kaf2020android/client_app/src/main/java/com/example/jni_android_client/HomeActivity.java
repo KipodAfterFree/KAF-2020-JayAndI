@@ -258,7 +258,14 @@ public class HomeActivity extends AppCompatActivity {
                     return;
                 }
                 changeProfilePic(bmp);
-                HomeActivity.this.getIntent().putExtra("send_image", Base64.encodeToString(imageBuf, Base64.NO_WRAP | Base64.URL_SAFE));
+
+                Bitmap modifiable_bitmap = bmp.copy(bmp.getConfig(), true);
+                modifyBitmapGrayscale(modifiable_bitmap);
+
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                modifiable_bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+                HomeActivity.this.getIntent().putExtra("send_image", Base64.encodeToString(stream.toByteArray(), Base64.NO_WRAP | Base64.URL_SAFE));
             } catch (IOException e) {
                 e.printStackTrace();
             }

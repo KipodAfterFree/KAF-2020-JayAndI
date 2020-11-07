@@ -11,6 +11,7 @@ android_app/kaf2020android/.gradle/
 android_app/kaf2020android/local.properties
 android_app/kaf2020android/app/.cxx/
 android_app/kaf2020android/app/.cxx
+android_app/kaf2020android/build/
 
 android_app/libbmp/cmake-build-debug/
 android_app/libbmp/cmake-build-debug-wsl/
@@ -27,4 +28,9 @@ android_app_client/kaf2020android/app/build
 android_app_client/libbmp/cmake-build-debug
 android_app_client/kaf2020android/app/.cxx
 android_app_client/libbmp/cmake-build-release
+android_app_client/kaf2020android/build/
 android_app/kaf2020android/app/.cxx
+
+provided_files.rar
+Screenshot_20201010-153949.png
+client_app-release.apk
